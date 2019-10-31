@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{7611DA1D-95A8-4157-8241-1DCC62B67159}|Default">
+  <MonoDevelop.Ide.ItemProperties.SistemaVenda PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SistemaVenda/Views/Home/Menu.cshtml">
+    <Files>
+      <File FileName="SistemaVenda/Views/_ViewStart.cshtml" Line="4" Column="1" />
+      <File FileName="SistemaVenda/Views/Shared/_Layout.cshtml" />
+      <File FileName="SistemaVenda/Models/ComidasViewModel.cs" />
+      <File FileName="SistemaVenda/Views/Home/Menu.cshtml" Line="31" Column="17" />
+      <File FileName="SistemaVenda/Views/Home/Index.cshtml" />
+      <File FileName="SistemaVenda/wwwroot/css/estilos.css" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SistemaVenda" expanded="True">
+            <Node name="SistemaVenda" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True">
+                  <Node name="Menu.cshtml" selected="True" />
+                </Node>
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+                <Node name="images" expanded="True">
+                  <Node name="comidas" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

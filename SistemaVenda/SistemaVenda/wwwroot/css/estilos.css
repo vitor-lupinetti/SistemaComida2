@@ -1,0 +1,71 @@
+﻿.fundo-home{
+    background-image:url(../images/comidas/comidas-menu.jpg);
+    
+}
+
+.qtd{
+ display:inline;
+ margin-top:4%;
+ margin-bottom:2%;
+}
+
+.navbar {
+    background-color: red;
+}
+
+.carrossel {
+    object-fit: cover;
+    height: 600px;
+}
+
+.imagem1 {
+    object-position: 0 80%;
+}
+
+.imagem2 {
+    object-position: 0 10%;
+}
+
+.imagem4 {
+    object-position: 0 40%;
+}
+
+.carousel-inner h2 {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+    font-size: 3em;
+    color: #fffdd9;
+}
+
+.carousel-inner p {
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #000;
+    font-size: 2em;
+    color: #fffdd9;
+}
+
+.bd-example {
+    margin-top: 2%;
+    margin-bottom: 10%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+body {
+    background-color: #F2FFFC;
+}
+
+.titulo {
+    margin-left:40%;
+}
+
+.titulo{
+    margin-right:5px;
+}
+.form-signin {
+    width: 30%;
+    margin: auto;
+}
+.cadastro{
+    margin:auto;
+}

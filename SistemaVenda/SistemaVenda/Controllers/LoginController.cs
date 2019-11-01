@@ -22,15 +22,15 @@ namespace SistemaVenda.Controllers
 
             UsuarioDAO dao = new UsuarioDAO();
 
-           /* var usuario = dao.ConsultaEmail(Email);
+           var usuario = dao.ConsultaEmail(Email);
 
             if(usuario == null)
             {
                 ViewBag.Erro = "Email não cadastrado.";
                 return View("Index");
-            }*/
+            }
 
-            if (Email == "vi.lupinetti@hotmail.com.br" && senha == "abc")
+            if (Email == usuario.Email && senha == usuario.Senha)
             {
                 HttpContext.Session.SetString("Logado", "true");
                 ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);

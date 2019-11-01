@@ -98,11 +98,11 @@ values
 
 insert into Embalagem(Id,Descricao,QtdEstoque)
 values
-(1, 'Copo de plastico', 10),(2, 'Enrolado no papel', 10),(3, 'Pote tÈrmico de isopor', 10),(4, 'Caixa de papel„o', 10),(5,'Emabalagem de pl·stico', 10)
+(1, 'Copo de plastico', 10),(2, 'Enrolado no papel', 10),(3, 'Pote t√©rmico de isopor', 10),(4, 'Caixa de papel√£o', 10),(5,'Emabalagem de pl√°stico', 10)
 
 insert into Cidades(Id, Descricao,ValorEntrega)
 values
-(1, 'S„o Bernardo do Campo',2),(2, 'Santo AndrÈ', 5),(3,'S„o Paulo',7)
+(1, 'S√£o Bernardo do Campo',2),(2, 'Santo Andr√©', 5),(3,'S√£o Paulo',7)
 
 select * from Categorias
 ----------------------------------------Procedures---------------------------------------------
@@ -135,19 +135,19 @@ GO
 ------------------------------------------------------------------------------------------------------------------
 create procedure spConsultaEmail
 (
-	@Email varchar(max)
+	@email VARCHAR(max)
 )
 as
 begin
-	declare @sql varchar(max);
-	set @sql = 'select * from Usuarios where Email = ' +  cast(@Email as varchar(max))
-	exec(@sql)
+select * from Usuarios where email = +  @email
+
 end
 GO
+--------------------------------------------------------
+--
+--exec spConsultaEmail 'vi.lupinetti@hotmail.com.br'
 
-exec spConsultaEmail 'vi.lupinetti@hotmail.com.br'
-
-select * from Usuarios where Email = 'vi.lupinetti@hotmail.com.br'
+--select * from Usuarios where Usuarios.Email = 'vi.lupinetti@hotmail.com.br'
 ------------------------------------------------------------------------------------------------------------------
 
 
@@ -155,7 +155,8 @@ select * from Usuarios where Email = 'vi.lupinetti@hotmail.com.br'
 create procedure spListagem
 (
 	@tabela varchar(max),
-	@ordem varchar(max))
+	@ordem varchar(max)
+)
 as
 begin
 	exec('select * from ' + @tabela +
@@ -364,3 +365,4 @@ GO
 
 select * from Usuarios
 select * from Comidas
+

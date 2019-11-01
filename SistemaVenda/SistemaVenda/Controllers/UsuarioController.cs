@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using SistemaVenda.DAO;
 using SistemaVenda.Models;
 
@@ -39,5 +40,6 @@ namespace SistemaVenda.Controllers
                 ModelState.AddModelError("Foto", "Imagem limitada a 2 mb.");
         }
 
+        
     }
 }

@@ -1,36 +1,29 @@
 ﻿<Properties StartupConfiguration="{7611DA1D-95A8-4157-8241-1DCC62B67159}|Default">
   <MonoDevelop.Ide.ItemProperties.SistemaVenda PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SistemaVenda/Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SistemaVenda/Views/Home/Menu.cshtml">
     <Files>
-      <File FileName="SistemaVenda/DAO/ConexaoBD.cs" Line="12" Column="126" />
-      <File FileName="SistemaVenda/Controllers/PadraoController.cs" Line="112" Column="12" />
-      <File FileName="SistemaVenda/Controllers/UsuarioController.cs" Line="43" Column="9" />
-      <File FileName="SistemaVenda/Controllers/LoginController.cs" Line="29" Column="56" />
-      <File FileName="SistemaVenda/Views/Login/Index.cshtml" Line="28" Column="24" />
-      <File FileName="SistemaVenda/Views/Comida/Form.cshtml" Line="1" Column="1" />
-      <File FileName="SistemaVenda/Controllers/HomeController.cs" Line="16" Column="12" />
+      <File FileName="SistemaVenda/Views/Home/Menu.cshtml" Line="13" Column="47" />
+      <File FileName="SistemaVenda/Views/Usuario/Form.cshtml" Line="32" Column="71" />
+      <File FileName="SistemaVenda/Models/UsuarioViewModel.cs" Line="14" Column="34" />
+      <File FileName="SistemaVenda/DAO/UsuarioDAO.cs" Line="35" Column="56" />
+      <File FileName="SistemaVenda/Controllers/PadraoController.cs" Line="22" Column="86" />
+      <File FileName="SistemaVenda/Views/Shared/_Layout.cshtml" Line="57" Column="11" />
+      <File FileName="SistemaVenda/Controllers/HomeController.cs" Line="43" Column="86" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SistemaVenda" expanded="True">
             <Node name="SistemaVenda" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="HomeController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="DAO" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Comida" expanded="True" />
-                <Node name="Home" expanded="True" />
-                <Node name="Login" expanded="True" />
-                <Node name="Promocao" expanded="True" />
-                <Node name="Shared" expanded="True" />
-              </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="css" expanded="True" />
-                <Node name="images" expanded="True">
-                  <Node name="comidas" expanded="True" />
+                <Node name="Home" expanded="True">
+                  <Node name="Menu.cshtml" selected="True" />
                 </Node>
+                <Node name="Shared" expanded="True" />
+                <Node name="Usuario" expanded="True" />
               </Node>
             </Node>
           </Node>

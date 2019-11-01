@@ -19,6 +19,7 @@ namespace SistemaVenda.Controllers
         {
             var lista = DAO.Listagem();
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
+            ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
             return View(lista);
         }
         public virtual IActionResult Create(int id)
@@ -26,6 +27,7 @@ namespace SistemaVenda.Controllers
             ViewBag.Operacao = "I";
             T model = Activator.CreateInstance(typeof(T)) as T; PreencheDadosParaView("I", model);
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
+            ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
             return View("Form", model);
         }
         protected virtual void PreencheDadosParaView(string Operacao, T model)

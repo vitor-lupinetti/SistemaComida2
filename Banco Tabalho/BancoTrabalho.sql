@@ -20,6 +20,7 @@ create Table Cidades
 Create table Usuarios
 (
 	Id int primary key,
+	TipoUsuario VARCHAR(10) default 'cliente',
 	Nome varchar(50) not null,
 	Email varchar(max) not null,
 	Senha varchar(max) not null,
@@ -104,7 +105,7 @@ insert into Cidades(Id, Descricao,ValorEntrega)
 values
 (1, 'São Bernardo do Campo',2),(2, 'Santo André', 5),(3,'São Paulo',7)
 
-select * from Categorias
+
 ----------------------------------------Procedures---------------------------------------------
 
 go
@@ -190,6 +191,7 @@ GO
 create procedure spInsert_Usuarios
 (
 	@Id int,
+	@TipoUsuario varchar(10),
 	@Nome varchar(max),
 	@Email varchar(max),
 	@Endereco varchar(max),
@@ -199,9 +201,9 @@ create procedure spInsert_Usuarios
 as
 begin
 insert into Usuarios
-(Id, nome, Email, Senha, Imagem, Endereco)
+(Id,tipousuario, nome, Email, Senha, Imagem, Endereco)
 values
-(@Id, @Nome, @Email, @Senha, @Imagem, @Endereco)
+(@Id, @tipousuario, @Nome, @Email, @Senha, @Imagem, @Endereco)
 end
 GO
 
@@ -375,6 +377,6 @@ end
 GO
 ------------------------------------------------------------------------------------------------------------------
 
-select * from Usuarios
-select * from Comidas
 
+
+SELECT * from Usuarios

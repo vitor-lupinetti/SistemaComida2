@@ -44,7 +44,7 @@
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cadastros</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" asp-area="" asp-controller="Usuario" asp-action="Create">Usuário</a>
-                        @if (ViewBag.Logado == true)
+                        @if (ViewBag.Logado == true && ViewBag.Tipo == "Adm")
                         {
                             <a class="dropdown-item" asp-area="" asp-controller="Comida" asp-action="Create">Prato</a>
                             <a class="dropdown-item" asp-area="" asp-controller="Entregador" asp-action="Create">Entregador</a>

@@ -15,6 +15,7 @@ namespace SistemaVenda.Controllers
         {
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
             ViewBag.Nome = HelperController.VerificaNomeLogado(HttpContext.Session);
+            ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
             return View();
         }
 
@@ -23,7 +24,7 @@ namespace SistemaVenda.Controllers
             ComidaDAO dao = new ComidaDAO();
 
             var lista = dao.ListagemCategorias(id);
-
+            ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
             return View("Menu", lista);
         }
 
@@ -33,11 +34,13 @@ namespace SistemaVenda.Controllers
             var lista = DAO.Listagem();
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
             ViewBag.Nome = HelperController.VerificaNomeLogado(HttpContext.Session);
+            ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
             return View("Menu", lista);
         }
         public IActionResult Sobre()
         {
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
+            ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
             return View();
         }
     }

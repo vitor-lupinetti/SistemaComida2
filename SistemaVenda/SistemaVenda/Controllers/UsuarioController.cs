@@ -27,9 +27,8 @@ namespace SistemaVenda.Controllers
 
             if(string.IsNullOrEmpty(model.Nome))
                 ModelState.AddModelError("Nome", "Preencha o nome.");
-            Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
-            if (!rg.IsMatch(model.Email))
-                ModelState.AddModelError("Email", "Email inválido");
+            if (string.IsNullOrEmpty(model.Email))
+                ModelState.AddModelError("Email", "Digite um email");
             if (string.IsNullOrEmpty(model.Endereco))
                 ModelState.AddModelError("Endereco", "Endereço inválido");
             if (string.IsNullOrEmpty(model.Senha))
@@ -38,6 +37,10 @@ namespace SistemaVenda.Controllers
                 ModelState.AddModelError("Foto", "Escolha uma imagem.");
             else if (model.Imagem.Length / 1024 / 1024 >= 2)
                 ModelState.AddModelError("Foto", "Imagem limitada a 2 mb.");
+            Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+            if (!rg.IsMatch(model.Email))
+                ModelState.AddModelError("Email", "Email inválido");
+            
         }
 
         

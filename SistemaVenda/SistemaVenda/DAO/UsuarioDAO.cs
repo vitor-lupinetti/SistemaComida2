@@ -16,13 +16,14 @@ namespace SistemaVenda.DAO
             if (imgByte == null)
                 imgByte = DBNull.Value;
 
-            SqlParameter[] parametros = new SqlParameter[6];
+            SqlParameter[] parametros = new SqlParameter[7];
             parametros[0] = new SqlParameter("Id", model.Id);
             parametros[1] = new SqlParameter("Nome", model.Nome);
             parametros[2] = new SqlParameter("Imagem", imgByte);
             parametros[3] = new SqlParameter("Email", model.Email);
             parametros[4] = new SqlParameter("Senha", model.Senha);
             parametros[5] = new SqlParameter("Endereco", model.Endereco);
+            parametros[6] = new SqlParameter("TipoUsuario", model.TipoUsuario);
 
             return parametros;
         }
@@ -31,6 +32,7 @@ namespace SistemaVenda.DAO
         {
             UsuarioViewModel usuario = new UsuarioViewModel();
             usuario.Id = Convert.ToInt32(registro["Id"]);
+            usuario.TipoUsuario = registro["TipoUsuario"].ToString();
             usuario.Nome = registro["Nome"].ToString();
             usuario.Email = registro["Email"].ToString();
             usuario.Senha = registro["Senha"].ToString();

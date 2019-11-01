@@ -34,6 +34,7 @@ namespace SistemaVenda.Controllers
             {
                 HttpContext.Session.SetString("Logado", "true");
                 HttpContext.Session.SetString("Usuario", usuario.Nome);
+                HttpContext.Session.SetString("TipoUsuario", usuario.TipoUsuario);
                 ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
                 ViewBag.Nome = usuario.Nome;
                 return RedirectToAction("index", "Home");

@@ -164,6 +164,18 @@ begin
 end
 GO
 ------------------------------------------------------------------------------------------------------------------
+create procedure spListagemCategorias
+(
+
+	@idcategoria int
+)
+as
+begin
+	select * from Comidas
+	 where Idcategoria = @idcategoria 
+end
+GO
+------------------------------------------------------------------------------------------------------------------
 
 create procedure spProximoId
 (@tabela varchar(max))

@@ -14,7 +14,17 @@ namespace SistemaVenda.Controllers
         public IActionResult Index()
         {
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
+            ViewBag.Nome = HelperController.VerificaNomeLogado(HttpContext.Session);
             return View();
+        }
+
+        public IActionResult Categorias(int id)
+        {
+            ComidaDAO dao = new ComidaDAO();
+
+            var lista = dao.ListagemCategorias(id);
+
+            return View("Menu", lista);
         }
 
         public IActionResult Menu()
@@ -22,6 +32,7 @@ namespace SistemaVenda.Controllers
             ComidaDAO DAO = new ComidaDAO();
             var lista = DAO.Listagem();
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
+            ViewBag.Nome = HelperController.VerificaNomeLogado(HttpContext.Session);
             return View("Menu", lista);
         }
         public IActionResult Sobre()

@@ -16,5 +16,11 @@ namespace SistemaVenda.Controllers
             else
                 return true;
         }
+
+        public static string VerificaNomeLogado(ISession session)
+        {
+            string nome = session.GetString("Usuario");
+            return nome;
+        }
     }
 }

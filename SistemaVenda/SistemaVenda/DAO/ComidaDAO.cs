@@ -16,7 +16,7 @@ namespace SistemaVenda.DAO
             if (imgByte == null)
                 imgByte = DBNull.Value;
 
-            SqlParameter [] parametros = new SqlParameter[6];
+            SqlParameter[] parametros = new SqlParameter[6];
             parametros[0] = new SqlParameter("Id", model.Id);
             parametros[1] = new SqlParameter("Descricao", model.Descricao);
             parametros[2] = new SqlParameter("Preco", model.Preco);
@@ -51,6 +51,19 @@ namespace SistemaVenda.DAO
             Tabela = "Comidas";
         }
 
-        
+        public List<ComidasViewModel> ListagemCategorias(int id)
+        {
+            var p = new SqlParameter[]
+           {
+                new SqlParameter("idCategoria", id)
+           };
+            var tabela = HelperDAO.ExecutaProcSelect("spListagemCategorias", p);
+            List<ComidasViewModel> lista = new List<ComidasViewModel>();
+            foreach (DataRow registro in tabela.Rows)
+            {
+                lista.Add(MontaModel(registro));
+            }
+            return lista;
+        }
     }
 }

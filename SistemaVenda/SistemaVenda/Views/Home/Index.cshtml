@@ -4,6 +4,10 @@
 }
 
 <div>
+    @if (ViewBag.Logado == true)
+    {
+        <h2>Bem vindo @ViewBag.Nome</h2>
+    }
     <div class="bd-example">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">

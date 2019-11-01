@@ -12531,28 +12531,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/vitorlupinetti/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\Dell\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/vitorlupinetti/Desktop/SistemaComida/SistemaComida2/SistemaVenda/SistemaVenda/SistemaVenda.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\Desktop\\TrabalhoSite\\SistemaComida2\\SistemaVenda\\SistemaVenda\\SistemaVenda.csproj",
       "projectName": "SistemaVenda",
-      "projectPath": "/Users/vitorlupinetti/Desktop/SistemaComida/SistemaComida2/SistemaVenda/SistemaVenda/SistemaVenda.csproj",
-      "packagesPath": "/Users/vitorlupinetti/.nuget/packages/",
-      "outputPath": "/Users/vitorlupinetti/Desktop/SistemaComida/SistemaComida2/SistemaVenda/SistemaVenda/obj/",
+      "projectPath": "C:\\Users\\Dell\\Desktop\\TrabalhoSite\\SistemaComida2\\SistemaVenda\\SistemaVenda\\SistemaVenda.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dell\\Desktop\\TrabalhoSite\\SistemaComida2\\SistemaVenda\\SistemaVenda\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/vitorlupinetti/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -12581,7 +12583,6 @@
             "version": "[2.1.2, )"
           },
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
@@ -12592,16 +12593,10 @@
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }

@@ -9,51 +9,32 @@
 <p>
     <a asp-action="Create">Cadastrar</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Descricao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Preco)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdCategoria)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdEmbalagem)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Preco)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdCategoria)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEmbalagem)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
+
+<table class=" table table-bordered">
+	<thead>
+		<tr>
+			<td>Ações</td>
+			<td>Descrição</td>
+			<td>Preço</td>
+			<td>Categoria</td>
+			<td>Embalagem</td>
+			<td>Id</td>
+		</tr>	
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{ 
+			<tr>
+				<td>
+					<a href="Comida/Edit?id=@item.Id">Editar</a>
+					<a href="javascript:apagar(@item.Id,'Comida')">Apagar</a>
+				</td>
+				<td>@item.Descricao</td>
+				<td>@item.Preco</td>
+				<td>@item.IdCategoria</td>
+				<td>@item.IdEmbalagem</td>
+				<td>@item.Id</td>
+			</tr>
+		}
+	</tbody>
 </table>

@@ -9,59 +9,34 @@
 <p>
     <a asp-action="Create">Novo Cadastro</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Senha)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.Endereco)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ValorGasto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th></th>
-        </tr>
+			<th>Ações</th>
+			<th scope="col">Nome</th>
+			<th scope="col">Email</th>
+			<th scope="col">Senha</th>
+			<th scope="col">Endereço</th>
+			<th scope="col">Valor</th>
+			<th scope="col">Id</th>
+            
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Senha)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Endereco)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValorGasto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+		@foreach (var item in Model) {
+				<tr>
+					<td>
+						<a href="Usuario/Edit?id=@item.Id">Editar</a>
+						<a href="javascript:apagar(@item.Id,'Usuario')">Apagar</a>
+					</td>
+					<td>@item.Nome</td>
+					<td>@item.Email</td>
+					<td>@item.Senha</td>
+					<td>@item.Endereco</td>
+					<td>@item.ValorGasto</td>
+					<td>@item.Id</td>
+					
+				</tr>
+		}
     </tbody>
 </table>
 

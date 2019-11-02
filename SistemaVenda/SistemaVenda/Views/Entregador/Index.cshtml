@@ -9,48 +9,8 @@
 <p>
     <a asp-action="Create">Cadastrar novo</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Foto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdCidadeEntrega)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Foto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdCidadeEntrega)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
 
 <table class=" table table-bordered">
     <thead>
@@ -62,7 +22,29 @@
             <th scope="col">id<th>
         </tr>
     </thead>
-    <tbody>
-
-    </tbody>
+	<tbody>
+		
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					<a href="Entregador/Edit?id=@item.Id">Editar</a>
+					<a href="javascript:apagar(@item.Id,'Entregador')">Apagar</a>
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Nome)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Foto)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.IdCidadeEntrega)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Id)
+				</td>
+				
+			</tr>
+		}
+	</tbody>
 </table>

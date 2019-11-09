@@ -111,18 +111,7 @@ namespace SistemaVenda.Controllers
             }
         }
 
-       public override void OnActionExecuting(ActionExecutingContext context)
-        {
-            T model = Activator.CreateInstance(typeof(T)) as T;
-            if (!HelperController.VerificaUserLogado(HttpContext.Session))
-                context.Result = RedirectToAction("Index", "Login");
-            
-            else 
-            {
-                ViewBag.Logado = true;
-                base.OnActionExecuting(context);
-            }
-        }
+       
     }
     
 } 

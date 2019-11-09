@@ -24,6 +24,8 @@ namespace SistemaVenda.Controllers
             ComidaDAO dao = new ComidaDAO();
 
             var lista = dao.ListagemCategorias(id);
+            ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
+            ViewBag.Nome = HelperController.VerificaNomeLogado(HttpContext.Session);
             ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
             return View("Menu", lista);
         }

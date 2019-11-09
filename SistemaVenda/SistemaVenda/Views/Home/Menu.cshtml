@@ -11,7 +11,10 @@
                 <a href="/Home/Categorias?id=2" class="btn btn-secondary my-2">Pratos principais</a>
                 <a href="/Home/Categorias?id=3" class="btn btn-secondary my-2">Sobremesas</a>
                 <a href="/Home/Categorias?id=4" class="btn btn-secondary my-2">Bebidas</a>
-                <a class=" btn btn-secondary my-2" asp-area="" asp-controller="Comida" asp-action="Create">Cadastrar novo prato.</a>
+                @if (ViewBag.Tipo == "Adm")
+                {
+                     <a class=" btn btn-secondary my-2" asp-area="" asp-controller="Comida" asp-action="Create">Cadastrar novo prato.</a>
+                }
             </p>
         </div>
     </section>

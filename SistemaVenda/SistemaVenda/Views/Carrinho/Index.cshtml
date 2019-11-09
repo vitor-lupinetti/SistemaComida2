@@ -12,7 +12,8 @@
     <tr>      
         <th>Comida</th>        
         <th>Quantidade</th>
-        <th>Preço total</th>
+        <th>Preço item</th>
+        <th>Remover item</th>
     </tr>
 
     @foreach (var item in Model)
@@ -23,10 +24,11 @@
     <tr>        
         <td>@item.Nome</td>        
         <td>@item.Quantidade</td>
-        <td>@preco</td>
+        <td>R$@preco</td>
+        <td><a class="btn btn-sm btn-outline-secondary" href="/Carrinho/Remover/?idComida=@item.IdComida">Remover do carrinho</a></td>
     </tr>
     }
 </table>
 <br />
-<p>Preço total: @precototal</p>
+<p>Preço total: R$@precototal</p>
 <a class="btn btn-sm btn-outline-secondary" asp-area="" asp-controller="Home" asp-action="Menu">Voltar para o menu</a>

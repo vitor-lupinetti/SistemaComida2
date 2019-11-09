@@ -18,6 +18,8 @@ namespace SistemaVenda.Controllers
         public IActionResult Index()
         {
             var carrinho = ObtemCarrinhoNaSession();
+            ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
+            ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
             return View(carrinho);
         }
 
@@ -39,6 +41,8 @@ namespace SistemaVenda.Controllers
             }
 
             // preenche a imagem
+            ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
+            ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
             carrinhoModel.ImagemEmBase64 = model.ImageBase64;
             return View(carrinhoModel);
         }
@@ -82,8 +86,25 @@ namespace SistemaVenda.Controllers
 
             string carrinhoJson = JsonConvert.SerializeObject(carrinho);
             HttpContext.Session.SetString("carrinho", carrinhoJson);
-
+            ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
+            ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
             return RedirectToAction("Index");
+        }
+        public IActionResult Remover(int idComida)
+        {
+            List<CarrinhoViewModel> carrinho = ObtemCarrinhoNaSession();
+
+            CarrinhoViewModel carrinhoModel = carrinho.Find(c => c.IdComida == idComida);
+
+            if(carrinhoModel != null)
+            {
+                carrinho.Remove(carrinhoModel);
+            }
+            string carrinhoJson = JsonConvert.SerializeObject(carrinho);
+            HttpContext.Session.SetString("carrinho", carrinhoJson);
+            ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
+            ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
+            return RedirectToAction("index");
         }
     }
 }

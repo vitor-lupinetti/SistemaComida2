@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SistemaVenda.DAO;
 using SistemaVenda.Models;
@@ -81,6 +82,19 @@ namespace SistemaVenda.Controllers
                 listaCategorias.Add(item);
             }
             ViewBag.Categorias = listaCategorias;
+        }
+
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+
+            if (!HelperController.VerificaUserLogado(HttpContext.Session))
+                context.Result = RedirectToAction("Index", "Login");
+
+            else
+            {
+                ViewBag.Logado = true;
+                base.OnActionExecuting(context);
+            }
         }
     }
 }

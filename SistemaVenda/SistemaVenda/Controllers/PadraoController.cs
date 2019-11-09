@@ -20,14 +20,19 @@ namespace SistemaVenda.Controllers
             var lista = DAO.Listagem();
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
             ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
-            return View(lista);
+            if(ViewBag.Tipo == "Adm")
+                return View(lista);
+            else
+                return RedirectToAction("index", "Home");
         }
         public virtual IActionResult Create(int id)
         {
             ViewBag.Operacao = "I";
-            T model = Activator.CreateInstance(typeof(T)) as T; PreencheDadosParaView("I", model);
+            T model = Activator.CreateInstance(typeof(T)) as T;
+            PreencheDadosParaView("I", model);
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
             ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
+            
             return View("Form", model);
         }
         protected virtual void PreencheDadosParaView(string Operacao, T model)
@@ -106,16 +111,18 @@ namespace SistemaVenda.Controllers
             }
         }
 
-      /*  public override void OnActionExecuting(ActionExecutingContext context)
+       public override void OnActionExecuting(ActionExecutingContext context)
         {
+            T model = Activator.CreateInstance(typeof(T)) as T;
             if (!HelperController.VerificaUserLogado(HttpContext.Session))
                 context.Result = RedirectToAction("Index", "Login");
-            else
+            
+            else 
             {
                 ViewBag.Logado = true;
                 base.OnActionExecuting(context);
             }
-        }*/
+        }
     }
     
 } 

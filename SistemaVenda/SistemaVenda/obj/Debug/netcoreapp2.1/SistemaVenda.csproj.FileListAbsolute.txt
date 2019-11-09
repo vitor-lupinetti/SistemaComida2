@@ -357,85 +357,87 @@ C:/Users/Dell/Desktop/sitec/SistemaComida-master/SistemaComida-master/SistemaVen
 /Users/vitorlupinetti/Desktop/SistemaComida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.dll
 /Users/vitorlupinetti/Desktop/SistemaComida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.pdb
 /Users/vitorlupinetti/Desktop/SistemaComida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.csproj.CopyComplete
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.deps.json
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.runtimeconfig.json
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.runtimeconfig.dev.json
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.dll
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.pdb
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.Views.dll
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.Views.pdb
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.csprojAssemblyReference.cache
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.csproj.CoreCompileInputs.cache
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.RazorAssemblyInfo.cache
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.RazorAssemblyInfo.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.AssemblyInfoInputs.cache
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.AssemblyInfo.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.TagHelpers.input.cache
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.TagHelpers.output.cache
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.RazorCoreGenerate.cache
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Comida\Form.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Comida\Index.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Comida\Login.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Entregador\Form.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Entregador\Index.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Home\Menu.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Home\Sobre.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Login\Index.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Promocao\Form.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Promocao\Index.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Form.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Index.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.RazorTargetAssemblyInfo.cache
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.RazorTargetAssemblyInfo.cs
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.Views.pdb
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.dll
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.pdb
-C:\Users\Dell\Desktop\TrabalhoSite\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.csproj.CopyComplete
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.deps.json
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.runtimeconfig.json
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.runtimeconfig.dev.json
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.dll
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.pdb
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.Views.dll
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\bin\Debug\netcoreapp2.1\SistemaVenda.Views.pdb
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.csprojAssemblyReference.cache
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.csproj.CoreCompileInputs.cache
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.RazorAssemblyInfo.cache
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.RazorAssemblyInfo.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.AssemblyInfoInputs.cache
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.AssemblyInfo.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.TagHelpers.input.cache
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.TagHelpers.output.cache
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.RazorCoreGenerate.cache
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Comida\Form.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Comida\Index.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Comida\Login.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Entregador\Form.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Entregador\Index.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Home\Menu.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Home\Sobre.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Login\Index.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Promocao\Form.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Promocao\Index.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Form.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Index.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.RazorTargetAssemblyInfo.cache
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.RazorTargetAssemblyInfo.cs
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.Views.pdb
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.dll
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.pdb
-C:\Sistema Comida\SistemaComida2\SistemaVenda\SistemaVenda\obj\Debug\netcoreapp2.1\SistemaVenda.csproj.CopyComplete
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.deps.json
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.runtimeconfig.json
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.runtimeconfig.dev.json
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.dll
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.pdb
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.Views.dll
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.Views.pdb
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.csprojAssemblyReference.cache
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.csproj.CoreCompileInputs.cache
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.RazorAssemblyInfo.cache
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.RazorAssemblyInfo.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.AssemblyInfoInputs.cache
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.AssemblyInfo.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.TagHelpers.input.cache
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.TagHelpers.output.cache
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.RazorCoreGenerate.cache
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Comida/Form.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Comida/Index.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Comida/Login.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Entregador/Form.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Entregador/Index.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Home/Menu.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Home/Sobre.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Login/Index.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Promocao/Form.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Promocao/Index.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Error.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Usuario/Form.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Usuario/Index.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/_ViewImports.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/_ViewStart.g.cshtml.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.RazorTargetAssemblyInfo.cache
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.RazorTargetAssemblyInfo.cs
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.Views.pdb
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.dll
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.pdb
+C:/Users/Dell/Desktop/TrabalhoSite/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.csproj.CopyComplete
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.deps.json
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.runtimeconfig.json
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.runtimeconfig.dev.json
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.dll
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.pdb
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.Views.dll
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/bin/Debug/netcoreapp2.1/SistemaVenda.Views.pdb
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.csprojAssemblyReference.cache
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.csproj.CoreCompileInputs.cache
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.RazorAssemblyInfo.cache
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.RazorAssemblyInfo.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.AssemblyInfoInputs.cache
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.AssemblyInfo.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.TagHelpers.input.cache
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.TagHelpers.output.cache
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.RazorCoreGenerate.cache
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Comida/Form.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Comida/Index.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Comida/Login.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Entregador/Form.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Entregador/Index.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Home/Menu.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Home/Sobre.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Login/Index.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Promocao/Form.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Promocao/Index.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Error.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Usuario/Form.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Usuario/Index.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/_ViewImports.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/_ViewStart.g.cshtml.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.RazorTargetAssemblyInfo.cache
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.RazorTargetAssemblyInfo.cs
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.Views.pdb
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.dll
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.pdb
+C:/Sistema Comida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.csproj.CopyComplete
+/Users/vitorlupinetti/Desktop/SistemaComida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Carrinho/Detalhes.cshtml.g.cs
+/Users/vitorlupinetti/Desktop/SistemaComida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Carrinho/Index.cshtml.g.cs

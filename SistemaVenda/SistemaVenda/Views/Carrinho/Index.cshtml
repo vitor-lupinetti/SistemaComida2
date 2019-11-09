@@ -1,0 +1,32 @@
+﻿@model List<CarrinhoViewModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var precototal = 0.0;
+}
+
+<h2>Itens no carrinho</h2>
+
+<br />
+
+<table class="table table-responsive">
+    <tr>      
+        <th>Comida</th>        
+        <th>Quantidade</th>
+        <th>Preço total</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        
+       var preco = item.Preco * item.Quantidade;
+       precototal += (item.Preco * item.Quantidade);
+    <tr>        
+        <td>@item.Nome</td>        
+        <td>@item.Quantidade</td>
+        <td>@preco</td>
+    </tr>
+    }
+</table>
+<br />
+<p>Preço total: @precototal</p>
+<a class="btn btn-sm btn-outline-secondary" asp-area="" asp-controller="Home" asp-action="Menu">Voltar para o menu</a>

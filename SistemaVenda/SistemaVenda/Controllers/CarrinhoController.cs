@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using SistemaVenda.DAO;
 using SistemaVenda.Models;
@@ -20,6 +21,7 @@ namespace SistemaVenda.Controllers
             var carrinho = ObtemCarrinhoNaSession();
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
             ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
+            PreparaListaCidadesParaCombo();
             return View(carrinho);
         }
 
@@ -105,6 +107,58 @@ namespace SistemaVenda.Controllers
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
             ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
             return RedirectToAction("index");
+        }
+
+        public IActionResult ConcluirCompra(int idcidade)
+        {
+            if(idcidade == 0)
+            {
+                TempData["Erro"] = "Escolha uma cidade para finalizar seu pedido.";
+                return RedirectToAction("index");
+            }
+
+            VendaDAO dao = new VendaDAO();
+            int idPedido = dao.ProximoId();
+
+            using (var transacao = new System.Transactions.TransactionScope())
+            {
+                VendaViewModel venda = new VendaViewModel();
+
+
+                venda.IdCidade = idcidade;
+                venda.DataVenda = DateTime.Now;
+                venda.Id = idPedido;
+                venda.IdEntregador = 1;
+                venda.IdUsuario = 1;
+                dao.Insert(venda);
+                ItensVendaDAO itemDAO = new ItensVendaDAO();
+                var carrinho = ObtemCarrinhoNaSession();
+                foreach (var elemento in carrinho)
+                {
+                    ItensVendaViewModel item = new ItensVendaViewModel();
+                    item.Id = idPedido;
+                    item.IdComida = elemento.IdComida;
+                    item.Qtd = elemento.Quantidade;
+
+                    itemDAO.Insert(item);
+                }
+                transacao.Complete();
+            }
+            
+            return RedirectToAction("Index", "Home");
+        }
+        private void PreparaListaCidadesParaCombo()
+        {
+            CidadeDAO cidadeDao = new CidadeDAO();
+            var cidades = cidadeDao.Listagem();
+            List<SelectListItem> listaCidades = new List<SelectListItem>();
+            listaCidades.Add(new SelectListItem("Selecione uma cidade...", "0"));
+            foreach (var cidade in cidades)
+            {
+                SelectListItem item = new SelectListItem(cidade.Descricao, cidade.Id.ToString());
+                listaCidades.Add(item);
+            }
+            ViewBag.Cidades = listaCidades;
         }
     }
 }

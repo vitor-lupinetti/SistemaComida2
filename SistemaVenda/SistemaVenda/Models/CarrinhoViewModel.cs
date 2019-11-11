@@ -5,7 +5,7 @@ namespace SistemaVenda.Models
     {
         public int Quantidade { get; set; }
         public int IdComida{ get; set; }
-
+        public int IdCidadeEntrega { get; set; }
         public string Nome { get; set; }
 
         public string ImagemEmBase64 { get; set; }

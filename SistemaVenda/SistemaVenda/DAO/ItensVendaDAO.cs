@@ -14,7 +14,7 @@ namespace SistemaVenda.DAO
         {
             SqlParameter[] parametros = new SqlParameter[3];
             parametros[0] = new SqlParameter("IdVenda", model.Id);
-            parametros[1] = new SqlParameter("IdComida", model.Id);
+            parametros[1] = new SqlParameter("IdComida", model.IdComida);
             parametros[2] = new SqlParameter("Qtd", model.Qtd);
           
             return parametros;
@@ -24,7 +24,7 @@ namespace SistemaVenda.DAO
         {
             ItensVendaViewModel itens = new ItensVendaViewModel();
             itens.Id = Convert.ToInt32(registro["IdVenda"]);
-            itens.Id = Convert.ToInt32(registro["IdComida"]);
+            itens.IdComida = Convert.ToInt32(registro["IdComida"]);
             itens.Qtd = Convert.ToInt32(registro["Qtd"]);
             return itens;
         }

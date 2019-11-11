@@ -63,7 +63,7 @@ using SistemaVenda.Models;
             WriteLiteral("\n<h2>Cadastros de entregadores</h2>\n\n<p>\n    ");
             EndContext();
             BeginContext(144, 41, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b46c80373fa64f7e93118af43f568ba4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "026292ecaa7444748bf078e5d4348d3d", async() => {
                 BeginContext(167, 14, true);
                 WriteLiteral("Cadastrar novo");
                 EndContext();

@@ -13,7 +13,7 @@ namespace SistemaVenda.DAO
         protected override SqlParameter[] CriaParametros(VendaViewModel model)
         {
             SqlParameter[] parametros = new SqlParameter[5];
-            parametros[0] = new SqlParameter("IdVenda", model.Id);
+            parametros[0] = new SqlParameter("Id", model.Id);
             parametros[1] = new SqlParameter("DataVenda", model.DataVenda);
             parametros[2] = new SqlParameter("IdUsuario", model.IdUsuario);
             parametros[3] = new SqlParameter("IdEntregador", model.IdEntregador);
@@ -24,7 +24,7 @@ namespace SistemaVenda.DAO
         protected override VendaViewModel MontaModel(DataRow registro)
         {
             VendaViewModel venda = new VendaViewModel();
-            venda.Id = Convert.ToInt32(registro["IdVenda"]);
+            venda.Id = Convert.ToInt32(registro["Id"]);
             venda.DataVenda = Convert.ToDateTime(registro["DataVenda"]);
             venda.IdUsuario = Convert.ToInt32(registro["IdUsuario"]);
             venda.IdEntregador = Convert.ToInt32(registro["IdEntregador"]);

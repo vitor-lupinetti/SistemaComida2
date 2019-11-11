@@ -73,7 +73,7 @@ using SistemaVenda.Models;
             WriteLiteral("\n");
             EndContext();
             BeginContext(66, 1036, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0c0779dce254752b3ad628b694672a6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "110cbac109634f36bbfe3c42af466652", async() => {
                 BeginContext(117, 258, true);
                 WriteLiteral(@"
     <div class=""text-center mb-4"">
@@ -82,7 +82,7 @@ using SistemaVenda.Models;
         <p>Caso não tenha cadastro ainda, clique ");
                 EndContext();
                 BeginContext(375, 85, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3eacdfb38e9e4adc8b5d21822a8c1998", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c16b8311318e405b8fbdf6c7ead33b0c", async() => {
                     BeginContext(452, 4, true);
                     WriteLiteral("aqui");
                     EndContext();

@@ -21,14 +21,28 @@
         
        var preco = item.Preco * item.Quantidade;
        precototal += (item.Preco * item.Quantidade);
-    <tr>        
-        <td>@item.Nome</td>        
-        <td>@item.Quantidade</td>
-        <td>R$@preco</td>
-        <td><a class="btn btn-sm btn-outline-secondary" href="/Carrinho/Remover/?idComida=@item.IdComida">Remover do carrinho</a></td>
-    </tr>
+        <tr>        
+            <td>@item.Nome</td>        
+            <td>@item.Quantidade</td>
+            <td>R$@preco</td>
+            <td><a class="btn btn-sm btn-outline-secondary" href="/Carrinho/Remover/?idComida=@item.IdComida">Remover do carrinho</a></td>
+        </tr>
     }
 </table>
-<br />
+<label class="control-label"></label>
+
+
 <p>Preço total: R$@precototal</p>
-<a class="btn btn-sm btn-outline-secondary" asp-area="" asp-controller="Home" asp-action="Menu">Voltar para o menu</a>
+@if(Model.Count > 0)
+{   @using (Html.BeginForm("ConcluirCompra", "Carrinho", FormMethod.Get))
+    {
+        <p>Escolha a cidade para entrega:</p>
+        <select name="idcidade" id="idcidade" asp-items="ViewBag.Cidades" class=""> </select>
+        <input type="submit" name="btnOK" value="Finalizar" />
+        <span>@TempData["Erro"]</span>
+    }
+    <br />
+    <br/>
+}   
+
+<a class="btn btn-sm btn-outline-secondary" asp-area="" asp-controller="Home" asp-action="Menu">Voltar para o cardápio</a>

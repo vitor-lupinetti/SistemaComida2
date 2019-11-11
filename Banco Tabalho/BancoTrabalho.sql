@@ -38,7 +38,8 @@ Create table Entregador
 	IdCidadeEntrega int foreign key references  Cidades(Id)
 )
 
-
+select * from Vendas
+select * from ItensVenda
 
 Create table Vendas
 (
@@ -60,7 +61,9 @@ Create table Promocao
 (
 	Id int not null primary key,
 	IdCategoria int not null foreign key references Categorias (Id),
-	Porcentagem int not null
+	Porcentagem int not null,
+	DataInicio DATETIME not null,
+	DataFim DATETIME not null
 )
 
 Create table Embalagem
@@ -99,7 +102,7 @@ values
 
 insert into Embalagem(Id,Descricao,QtdEstoque)
 values
-(1, 'Copo de plastico', 10),(2, 'Enrolado no papel', 10),(3, 'Pote térmico de isopor', 10),(4, 'Caixa de papelão', 10),(5,'Emabalagem de plástico', 10)
+(1, 'Copo de plastico', 10),(2, 'Enrolado no papel', 10),(3, 'Pote térmico de isopor', 10),(4, 'Embalagem para lanches', 10),(5,'Embalagem de plástico', 10)
 
 insert into Cidades(Id, Descricao,ValorEntrega)
 values
@@ -245,6 +248,23 @@ GO
 
 
 ------------------------------------------------------------------------------------------------------------------
+create procedure spInsert_ItensVenda(
+	@IdVenda int,
+	@IdComida int,
+    @Qtd int
+)
+as 
+begin
+insert into ItensVenda
+(IdVenda, IdComida, Qtd)
+values
+(@IdVenda, @IdComida, @Qtd)
+end 
+GO
+
+
+------------------------------------------------------------------------------------------------------------------
+
 
 
 create procedure spInsert_Promocao(
@@ -376,7 +396,6 @@ where Id = @Id
 end
 GO
 ------------------------------------------------------------------------------------------------------------------
-
 
 
 SELECT * from Usuarios

@@ -82,7 +82,7 @@ using SistemaVenda.Models;
             WriteLiteral("                     ");
             EndContext();
             BeginContext(854, 116, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac4e7eabad6f4fa2adb6a78f30c92f67", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d190a53f7d745f9bbe0c97bd4a2a565", async() => {
                 BeginContext(945, 21, true);
                 WriteLiteral("Cadastrar novo prato.");
                 EndContext();
@@ -127,7 +127,7 @@ using SistemaVenda.Models;
                         ");
             EndContext();
             BeginContext(1255, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "eecb35f42d9342a3b1ad48aa53d5c89b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c68d77d40ced47788944573af1123df0", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

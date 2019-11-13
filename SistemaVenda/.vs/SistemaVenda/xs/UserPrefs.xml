@@ -1,13 +1,21 @@
 ﻿<Properties StartupConfiguration="{7611DA1D-95A8-4157-8241-1DCC62B67159}|Default">
   <MonoDevelop.Ide.ItemProperties.SistemaVenda PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SistemaVenda/Views/Carrinho/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SistemaVenda/Views/Entregador/Index.cshtml">
     <Files>
-      <File FileName="SistemaVenda/Controllers/CarrinhoController.cs" Line="117" Column="50" />
-      <File FileName="SistemaVenda/DAO/ItensVendaDAO.cs" Line="17" Column="72" />
-      <File FileName="SistemaVenda/Models/ItensVendaViewModel.cs" Line="1" Column="1" />
-      <File FileName="SistemaVenda/DAO/VendaDAO.cs" Line="27" Column="52" />
+      <File FileName="SistemaVenda/DAO/PadraoDAO.cs" Line="21" Column="45" />
+      <File FileName="SistemaVenda/DAO/UsuarioDAO.cs" Line="47" Column="16" />
+      <File FileName="SistemaVenda/Views/Entregador/Form.cshtml" Line="26" Column="12" />
+      <File FileName="SistemaVenda/Views/Promocao/Form.cshtml" Line="18" Column="37" />
+      <File FileName="SistemaVenda/Views/Carrinho/Detalhes.cshtml" Line="1" Column="1" />
+      <File FileName="SistemaVenda/Views/Carrinho/Index.cshtml" Line="35" Column="50" />
+      <File FileName="SistemaVenda/Controllers/CarrinhoController.cs" Line="156" Column="85" />
+      <File FileName="SistemaVenda/Models/CarrinhoViewModel.cs" Line="1" Column="1" />
+      <File FileName="SistemaVenda/Models/PromocaoViewModel.cs" Line="1" Column="1" />
       <File FileName="SistemaVenda/Models/VendaViewModel.cs" Line="1" Column="1" />
-      <File FileName="SistemaVenda/Views/Carrinho/Index.cshtml" Line="1" Column="1" />
+      <File FileName="SistemaVenda/Models/EntregadorViewModel.cs" Line="11" Column="41" />
+      <File FileName="SistemaVenda/DAO/EntregadorDAO.cs" Line="27" Column="56" />
+      <File FileName="SistemaVenda/Controllers/EntregadorController.cs" Line="28" Column="75" />
+      <File FileName="SistemaVenda/Views/Entregador/Index.cshtml" Line="37" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,10 +26,11 @@
               <Node name="DAO" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Carrinho" expanded="True">
+                <Node name="Carrinho" expanded="True" />
+                <Node name="Entregador" expanded="True">
                   <Node name="Index.cshtml" selected="True" />
                 </Node>
-                <Node name="Entregador" expanded="True" />
+                <Node name="Promocao" expanded="True" />
               </Node>
             </Node>
           </Node>

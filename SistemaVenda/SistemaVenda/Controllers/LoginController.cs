@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using SistemaVenda.DAO;
 
 namespace SistemaVenda.Controllers
@@ -33,8 +34,11 @@ namespace SistemaVenda.Controllers
             if (Email == usuario.Email && senha == usuario.Senha)
             {
                 HttpContext.Session.SetString("Logado", "true");
-                HttpContext.Session.SetString("Usuario", usuario.Nome);
-                HttpContext.Session.SetString("TipoUsuario", usuario.TipoUsuario);
+                string usuarioJson = JsonConvert.SerializeObject(usuario);
+                HttpContext.Session.SetString("usuario", usuarioJson);
+               // HttpContext.Session.SetString("Usuario", usuario.Nome);
+               // HttpContext.Session.SetString("TipoUsuario", usuario.TipoUsuario);
+                //HttpContext.Session.SetString("IdUsuario", usuario.Id.ToString());
                 ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
                 ViewBag.Nome = usuario.Nome;
                 return RedirectToAction("index", "Home");

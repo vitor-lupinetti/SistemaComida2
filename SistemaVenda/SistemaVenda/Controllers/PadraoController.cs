@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Newtonsoft.Json;
 using SistemaVenda.DAO;
 using SistemaVenda.Models;
 
@@ -18,9 +20,14 @@ namespace SistemaVenda.Controllers
         public IActionResult Index()
         {
             var lista = DAO.Listagem();
+            UsuarioViewModel u = new UsuarioViewModel();
+            string usuarioJson = HttpContext.Session.GetString("usuario");
+            if (usuarioJson != null)
+                u = JsonConvert.DeserializeObject<UsuarioViewModel>(usuarioJson);
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
-            ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
-            if(ViewBag.Tipo == "Adm")
+            ViewBag.Nome = u.Nome;
+            ViewBag.Tipo = u.TipoUsuario;
+            if (ViewBag.Tipo == "Adm")
                 return View(lista);
             else
                 return RedirectToAction("index", "Home");
@@ -30,9 +37,13 @@ namespace SistemaVenda.Controllers
             ViewBag.Operacao = "I";
             T model = Activator.CreateInstance(typeof(T)) as T;
             PreencheDadosParaView("I", model);
+            UsuarioViewModel u = new UsuarioViewModel();
+            string usuarioJson = HttpContext.Session.GetString("usuario");
+            if (usuarioJson != null)
+                u = JsonConvert.DeserializeObject<UsuarioViewModel>(usuarioJson);
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
-            ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
-            
+            ViewBag.Nome = u.Nome;
+            ViewBag.Tipo = u.TipoUsuario;
             return View("Form", model);
         }
         protected virtual void PreencheDadosParaView(string Operacao, T model)

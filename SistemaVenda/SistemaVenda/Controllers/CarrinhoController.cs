@@ -116,20 +116,34 @@ namespace SistemaVenda.Controllers
                 TempData["Erro"] = "Escolha uma cidade para finalizar seu pedido.";
                 return RedirectToAction("index");
             }
+            if(!HelperController.VerificaUserLogado(HttpContext.Session))
+            {
+                TempData["Erro"] = "Você precisa estar logado para concluir sua compra.";
+                return RedirectToAction("index");
+            }
 
+            CidadeDAO ciDao = new CidadeDAO();
+            CidadesViewModel c = new CidadesViewModel();
+            c = ciDao.Consulta(idcidade);
             VendaDAO dao = new VendaDAO();
+            UsuarioDAO userDAO = new UsuarioDAO();
             int idPedido = dao.ProximoId();
-
+            UsuarioViewModel u = new UsuarioViewModel();
+            string usuarioJson = HttpContext.Session.GetString("usuario");
+            if (usuarioJson != null)
+                u = JsonConvert.DeserializeObject<UsuarioViewModel>(usuarioJson);
+    
             using (var transacao = new System.Transactions.TransactionScope())
             {
                 VendaViewModel venda = new VendaViewModel();
-
+                double preco = 0;
 
                 venda.IdCidade = idcidade;
                 venda.DataVenda = DateTime.Now;
                 venda.Id = idPedido;
                 venda.IdEntregador = 1;
-                venda.IdUsuario = 1;
+                venda.IdUsuario = u.Id;
+                
                 dao.Insert(venda);
                 ItensVendaDAO itemDAO = new ItensVendaDAO();
                 var carrinho = ObtemCarrinhoNaSession();
@@ -139,12 +153,18 @@ namespace SistemaVenda.Controllers
                     item.Id = idPedido;
                     item.IdComida = elemento.IdComida;
                     item.Qtd = elemento.Quantidade;
+                    preco += (elemento.Quantidade * elemento.Preco) + c.ValorEntrega;
 
                     itemDAO.Insert(item);
                 }
+                double valorgasto = u.ValorGasto + preco;
+                u.ValorGasto = valorgasto;
+                userDAO.Update(u);
+                string usuarioJson2 = JsonConvert.SerializeObject(u);
+                HttpContext.Session.SetString("usuario", usuarioJson2);
                 transacao.Complete();
             }
-            
+            RemoverTodos();
             return RedirectToAction("Index", "Home");
         }
         private void PreparaListaCidadesParaCombo()
@@ -153,12 +173,23 @@ namespace SistemaVenda.Controllers
             var cidades = cidadeDao.Listagem();
             List<SelectListItem> listaCidades = new List<SelectListItem>();
             listaCidades.Add(new SelectListItem("Selecione uma cidade...", "0"));
+            List<string> Fretes = new List<string>();
             foreach (var cidade in cidades)
             {
-                SelectListItem item = new SelectListItem(cidade.Descricao, cidade.Id.ToString());
+                SelectListItem item = new SelectListItem(cidade.Descricao + " - Frete: R$" + cidade.ValorEntrega, cidade.Id.ToString());
                 listaCidades.Add(item);
+               // Fretes.Add(cidade.Descricao + "Frete: R$"+cidade.ValorEntrega);
             }
             ViewBag.Cidades = listaCidades;
+            ViewBag.Fretes = Fretes;
+        }
+
+        private void RemoverTodos()
+        {
+            List<CarrinhoViewModel> carrinho = ObtemCarrinhoNaSession();
+            carrinho.Clear();
+            string carrinhoJson = JsonConvert.SerializeObject(carrinho);
+            HttpContext.Session.SetString("carrinho", carrinhoJson);
         }
     }
 }

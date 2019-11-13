@@ -12,18 +12,19 @@ namespace SistemaVenda.DAO
     {
         protected override SqlParameter[] CriaParametros(UsuarioViewModel model)
         {
-            object imgByte = model.ImageByte();
+            /*object imgByte = model.ImageByte();
             if (imgByte == null)
-                imgByte = DBNull.Value;
+                imgByte = DBNull.Value;*/
 
             SqlParameter[] parametros = new SqlParameter[7];
             parametros[0] = new SqlParameter("Id", model.Id);
             parametros[1] = new SqlParameter("Nome", model.Nome);
-            parametros[2] = new SqlParameter("Imagem", imgByte);
-            parametros[3] = new SqlParameter("Email", model.Email);
-            parametros[4] = new SqlParameter("Senha", model.Senha);
-            parametros[5] = new SqlParameter("Endereco", model.Endereco);
-            parametros[6] = new SqlParameter("TipoUsuario", model.TipoUsuario);
+            //parametros[2] = new SqlParameter("Imagem", imgByte);
+            parametros[2] = new SqlParameter("Email", model.Email);
+            parametros[3] = new SqlParameter("Senha", model.Senha);
+            parametros[4] = new SqlParameter("Endereco", model.Endereco);
+            parametros[5] = new SqlParameter("TipoUsuario", model.TipoUsuario);
+            parametros[6] = new SqlParameter("ValorGasto", model.ValorGasto);
 
             return parametros;
         }
@@ -39,10 +40,11 @@ namespace SistemaVenda.DAO
             usuario.Endereco = registro["Endereco"].ToString();
             usuario.ValorGasto = Convert.ToDouble(registro["ValorGasto"]);
 
-            if (registro["Imagem"] != DBNull.Value)
+            /*if (registro["Imagem"] != DBNull.Value)
             {
-                usuario.ImageBase64 = Convert.ToBase64String(registro["Imagem"] as byte[]);
-            }
+                //usuario.ImageBase64 = Convert.ToBase64String(registro["Imagem"] as byte[]);
+                //usuario.ImageByte = registro["imagem"] as byte[];
+            }*/
 
             return usuario;
         }

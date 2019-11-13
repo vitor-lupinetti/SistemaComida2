@@ -33,10 +33,10 @@ namespace SistemaVenda.Controllers
                 ModelState.AddModelError("Endereco", "Endereço inválido");
             if (string.IsNullOrEmpty(model.Senha))
                 ModelState.AddModelError("Senha", "Senha em branco.");
-            if (model.Imagem == null)
-                ModelState.AddModelError("Foto", "Escolha uma imagem.");
-            else if (model.Imagem.Length / 1024 / 1024 >= 2)
-                ModelState.AddModelError("Foto", "Imagem limitada a 2 mb.");
+           // if (model.Imagem == null)
+              //  ModelState.AddModelError("Foto", "Escolha uma imagem.");
+           // else if (model.Imagem.Length / 1024 / 1024 >= 2)
+               // ModelState.AddModelError("Foto", "Imagem limitada a 2 mb.");
             Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
             if (!rg.IsMatch(model.Email))
                 ModelState.AddModelError("Email", "Email inválido");

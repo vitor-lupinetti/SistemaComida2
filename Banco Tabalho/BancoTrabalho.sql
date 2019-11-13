@@ -24,7 +24,6 @@ Create table Usuarios
 	Nome varchar(50) not null,
 	Email varchar(max) not null,
 	Senha varchar(max) not null,
-	Imagem varbinary(max) not null,
 	Endereco varchar(max) not null,
 	ValorGasto decimal(10,2) default 0
 )
@@ -34,12 +33,8 @@ Create table Entregador
 (
 	Id int not null primary key,
 	Nome varchar(max) not null,
-	Foto varchar(max) not null,
 	IdCidadeEntrega int foreign key references  Cidades(Id)
 )
-
-select * from Vendas
-select * from ItensVenda
 
 Create table Vendas
 (
@@ -47,7 +42,8 @@ Create table Vendas
 	DataVenda datetime not null,
 	IdUsuario int not null foreign key references Usuarios (Id),
     IdEntregador int not null foreign key references Entregador (Id),
-	IdCidade int foreign key references  Cidades(Id)
+	IdCidade int foreign key references  Cidades(Id),
+	EnderecoEntrega VARCHAR(100)
 )
 
 Create table Categorias
@@ -199,14 +195,14 @@ create procedure spInsert_Usuarios
 	@Email varchar(max),
 	@Endereco varchar(max),
 	@Senha varchar(max),
-	@Imagem varbinary(max)
+	@ValorGasto DECIMAL(10,2)
 )
 as
 begin
 insert into Usuarios
-(Id,tipousuario, nome, Email, Senha, Imagem, Endereco)
+(Id,tipousuario, nome, Email, Senha,  Endereco, ValorGasto)
 values
-(@Id, @tipousuario, @Nome, @Email, @Senha, @Imagem, @Endereco)
+(@Id, @tipousuario, @Nome, @Email, @Senha, @Endereco, @ValorGasto)
 end
 GO
 
@@ -217,15 +213,14 @@ GO
 create procedure spInsert_Entregador(
 	@Id int,
 	@Nome varchar(max),
-	@Foto varchar(max) ,
 	@IdCidadeEntrega int
 )
 as
 begin 
 insert into Entregador
-(Id,Nome,Foto,IdCidadeEntrega)
+(Id,Nome,IdCidadeEntrega)
 values
-(@Id, @Nome, @Foto, @IdCidadeEntrega)
+(@Id, @Nome, @IdCidadeEntrega)
 end
 GO
 ------------------------------------------------------------------------------------------------------------------
@@ -270,14 +265,16 @@ GO
 create procedure spInsert_Promocao(
 	@Id int,
 	@IdCategoria int,
-	@Porcentagem int 
+	@Porcentagem int ,
+	@DataInicio DATETIME,
+	@DataFim DATETIME
 )
 as
 begin
 insert into Promocao
-(Id, IdCategoria, Porcentagem)
+(Id, IdCategoria, Porcentagem, DataInicio, DataFim)
 values 
-(@Id, @IdCategoria, @Porcentagem)
+(@Id, @IdCategoria, @Porcentagem, @DataInicio, @DataFim)
 end
 GO
 ------------------------------------------------------------------------------------------------------------------
@@ -307,7 +304,8 @@ create procedure spUpdate_Usuarios
 	@Email varchar(max),
 	@Endereco varchar(max),
 	@Senha varchar(max),
-	@Imagem varbinary(max)
+	@TipoUsuario varchar(10),
+	@ValorGasto decimal(10,2)
 )
 as
 begin
@@ -316,7 +314,8 @@ nome = @Nome,
 Email = @Email,
 Endereco = @Endereco,
 Senha = @Senha,
-Imagem = @Imagem
+ValorGasto = @ValorGasto,
+TipoUsuario = @TipoUsuario
 where Id = @Id
 end
 GO
@@ -325,14 +324,12 @@ GO
 create procedure spUpdate_Entregador
 (   @Id int,
 	@Nome varchar(max),
-	@Foto varchar(max) ,
 	@IdCidadeEntrega int
 )
 as
 begin 
 update Entregador set
 Nome = @Nome,
-Foto = @Foto,
 IdCidadeEntrega = @IdCidadeEntrega
 where Id = @Id
 end
@@ -363,13 +360,17 @@ create procedure spUpdate_Promocao
 (
 	@Id int,
 	@IdCategoria int,
-	@Porcentagem int 
+	@Porcentagem int ,
+	@DataInicio DATETIME,
+	@DataFim DATETIME
 )
 as
 begin
 update Promocao set
 IdCategoria = @IdCategoria,
-Porcentagem = @Porcentagem
+Porcentagem = @Porcentagem,
+datainicio = @DataInicio,
+datafim = @DataFim
 where Id = @Id
 end
 GO
@@ -395,7 +396,20 @@ Imagem = @Imagem
 where Id = @Id
 end
 GO
-------------------------------------------------------------------------------------------------------------------
 
+insert into Usuarios
+VALUES
+(2, 'Adm','Vitor','vi.lupinetti@hotmail.com', '123','Rua ingá', 0 )
+------------------------------------------------------------------------------------------------------------------
+/*SELECT * from Cidades
 
 SELECT * from Usuarios
+SELECT * from Vendas
+select * from ItensVenda
+
+delete  from Usuarios
+where id = 2
+
+insert into Usuarios
+VALUES
+(2, 'Adm','Vitor','vi.lupinetti@hotmail.com', '123','Rua ingá', 0 )*/

@@ -16,7 +16,7 @@ namespace SistemaVenda.Models
         public string Senha { get; set; }
         public string Endereco { get; set; }
         public double ValorGasto { get; set; }
-        public IFormFile Imagem { get; set; }
+        /*public IFormFile Imagem { get; set; }
         public string ImageBase64 { get; set; }
 
         public byte[] ImageByte()
@@ -28,7 +28,7 @@ namespace SistemaVenda.Models
                     return ms.ToArray();
                 }
             else
-                return null;
-        }
+                return null;*/
+        
     }
 }

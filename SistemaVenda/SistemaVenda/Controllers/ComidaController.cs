@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json;
 using SistemaVenda.DAO;
 using SistemaVenda.Models;
 
@@ -117,9 +119,14 @@ namespace SistemaVenda.Controllers
 
         public override void OnActionExecuting(ActionExecutingContext context)
         {
+            UsuarioViewModel u = new UsuarioViewModel();
+            string usuarioJson = HttpContext.Session.GetString("usuario");
+            if (usuarioJson != null)
+                u = JsonConvert.DeserializeObject<UsuarioViewModel>(usuarioJson);
+
             if (!HelperController.VerificaUserLogado(HttpContext.Session))
                 context.Result = RedirectToAction("Index", "Login");
-            else if (HelperController.VerificaTipoUsuario(HttpContext.Session) != "Adm")
+            else if (u.TipoUsuario != "Adm")
             {
                 context.Result = RedirectToAction("Index", "Home");
             }

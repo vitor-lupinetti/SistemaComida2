@@ -29,10 +29,10 @@
         </tr>
     }
 </table>
-<label class="control-label"></label>
 
 
-<p>Preço total: R$@precototal</p>
+
+<p>Preço total: R$@precototal (Frete não incluso)</p>
 @if(Model.Count > 0)
 {   @using (Html.BeginForm("ConcluirCompra", "Carrinho", FormMethod.Get))
     {

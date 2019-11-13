@@ -12,11 +12,10 @@ namespace SistemaVenda.DAO
     {
         protected override SqlParameter[] CriaParametros(EntregadorViewModel model)
         {
-            SqlParameter[] parametros = new SqlParameter[4];
+            SqlParameter[] parametros = new SqlParameter[3];
             parametros[0] = new SqlParameter("Id", model.Id);
             parametros[1] = new SqlParameter("Nome", model.Nome);
-            parametros[2] = new SqlParameter("Foto", model.Foto);
-            parametros[3] = new SqlParameter("IdCidadeEntrega", model.IdCidadeEntrega);
+            parametros[2] = new SqlParameter("IdCidadeEntrega", model.IdCidadeEntrega);
             
             return parametros;
         }
@@ -26,7 +25,6 @@ namespace SistemaVenda.DAO
             EntregadorViewModel entrega = new EntregadorViewModel();
             entrega.Id = Convert.ToInt32(registro["Id"]);
             entrega.Nome = registro["Nome"].ToString();
-            entrega.Foto = registro["Foto"].ToString();
             entrega.IdCidadeEntrega = Convert.ToInt32(registro["IdCidadeEntrega"]);
            
             return entrega;

@@ -28,5 +28,10 @@ namespace SistemaVenda.Controllers
             string Tipo = session.GetString("TipoUsuario");
             return Tipo;
         }
+        public static string VerificaIdUsuario(ISession session)
+        {
+            string Id = session.GetString("IdUsuario");
+            return Id;
+        }
     }
 }

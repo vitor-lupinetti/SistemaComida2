@@ -9,7 +9,6 @@ namespace SistemaVenda.Models
     {
         
         public string Nome { get; set; }
-        public string Foto { get; set; }
         public int IdCidadeEntrega { get; set; }
     }
 }

@@ -400,6 +400,8 @@ GO
 insert into Usuarios
 VALUES
 (2, 'Adm','Vitor','vi.lupinetti@hotmail.com', '123','Rua ingá', 0 )
+
+go
 ------------------------------------------------------------------------------------------------------------------
 /*SELECT * from Cidades
 
@@ -413,3 +415,16 @@ where id = 2
 insert into Usuarios
 VALUES
 (2, 'Adm','Vitor','vi.lupinetti@hotmail.com', '123','Rua ingá', 0 )*/
+
+create trigger trg_email on Usuarios for insert as
+begin
+
+	declare @email varchar(max) = (select Email from inserted)
+
+	if exists (select Email from Usuarios where Email = @email) begin
+	print 'email já está em uso'
+		rollback tran
+	end
+end
+
+select * from Usuarios

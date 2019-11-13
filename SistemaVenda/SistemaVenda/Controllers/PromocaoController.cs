@@ -27,6 +27,7 @@ namespace SistemaVenda.Controllers
                 ModelState.AddModelError("IdCategoria", "Preencha o id correto");
             if (model.Porcentagem < 0)
                 ModelState.AddModelError("Porcentagem", "Valor incorreto"); 
+            
         }
 
         public override IActionResult Create(int id)

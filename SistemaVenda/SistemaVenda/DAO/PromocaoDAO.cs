@@ -12,10 +12,12 @@ namespace SistemaVenda.DAO
     {
         protected override SqlParameter[] CriaParametros(PromocaoViewModel model)
         {
-            SqlParameter[] parametros = new SqlParameter[3];
+            SqlParameter[] parametros = new SqlParameter[5];
             parametros[0] = new SqlParameter("Id", model.Id);
             parametros[1] = new SqlParameter("IdCategoria", model.IdCategoria);
             parametros[2] = new SqlParameter("Porcentagem", model.Porcentagem);
+            parametros[3] = new SqlParameter("DataInicio", model.DataInicio);
+            parametros[4] = new SqlParameter("DataFim", model.DataFim);
 
             return parametros;
         }
@@ -26,7 +28,8 @@ namespace SistemaVenda.DAO
             entrega.Id = Convert.ToInt32(registro["Id"]);
             entrega.IdCategoria = Convert.ToInt32(registro["IdCategoria"]);
             entrega.Porcentagem = Convert.ToDouble(registro["Porcentagem"]);
-
+            entrega.DataInicio = Convert.ToDateTime(registro["DataInicio"]);
+            entrega.DataFim = Convert.ToDateTime(registro["DataFim"]);
             return entrega;
         }
 

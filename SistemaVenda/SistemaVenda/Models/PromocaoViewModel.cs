@@ -10,5 +10,7 @@ namespace SistemaVenda.Models
         
         public int IdCategoria { get; set; }
         public double Porcentagem { get; set; }
+        public DateTime DataInicio { get; set; }
+        public DateTime DataFim { get; set; }
     }
 }

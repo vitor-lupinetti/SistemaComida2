@@ -13,12 +13,14 @@
 
 <table class="table table-bordered">
     <thead>
-        <tr>  
-            <th>Ações</th>
-            <th scope="col">Categoria</th>
-            <th scope="col">Porcentagem</th>
-            <th scope="col">Id</th>
-        </tr>
+		<tr>
+			<th>Ações</th>
+			<th scope="col">Categoria</th>
+			<th scope="col">Porcentagem</th>
+			<th scope="col">Id</th>
+			<th scope="col">Data do Início</th>
+			<th scope="col">Data do Fim</th>
+		</tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
@@ -31,6 +33,8 @@
             <td>@item.IdCategoria</td>
             <td>@item.Porcentagem</td>
             <td>@item.Id</td>
+			<td>@item.DataInicio</td>
+			<td>@item.DataFim</td>
         </tr>
                  
         }

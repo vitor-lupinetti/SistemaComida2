@@ -36,6 +36,12 @@ namespace SistemaVenda.Controllers
             else if (model.Imagem.Length / 1024 / 1024 >= 2)
                 ModelState.AddModelError("Imagem", "Imagem limitada a 2 mb.");
 
+           /* if(operacao == "A" && model.Imagem == null)
+            {
+                ComidasViewModel c = new ComidasViewModel();
+                c.
+            }*/
+
         }
         public override IActionResult Create(int id)
         {

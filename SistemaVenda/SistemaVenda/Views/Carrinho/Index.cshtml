@@ -39,6 +39,8 @@
         <p>Escolha a cidade para entrega:</p>
         <select name="idcidade" id="idcidade" asp-items="ViewBag.Cidades" class=""> </select>
         <input type="submit" name="btnOK" value="Finalizar" />
+        <p>Endereço entrega:</p>
+        <input type ="text" id="endereco" name="endereco" />
         <span>@TempData["Erro"]</span>
     }
     <br />

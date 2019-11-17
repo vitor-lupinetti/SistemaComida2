@@ -12,5 +12,6 @@ namespace SistemaVenda.Models
         public int IdUsuario { get; set; }
         public int IdEntregador { get; set; }
         public int IdCidade { get; set; }
+        public string EnderecoEntrega { get; set; }
     }
 }

@@ -28,12 +28,12 @@
                 <span asp-validation-for="Preco" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdCategoria" class="control-label"></label>
+                <label asp-for="IdCategoria" class="control-label">Selecione a categoria</label>
                 <select asp-for="IdCategoria" asp-items="ViewBag.Categorias" class="form-control"> </select>
                 <span asp-validation-for="IdCategoria" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdEmbalagem" class="control-label"></label>
+                <label asp-for="IdEmbalagem" class="control-label">Selecione a embalagem de entrega adequada.</label>
                 <select asp-for="IdEmbalagem" asp-items="ViewBag.Embalagens" class="form-control"> </select>
                 <span asp-validation-for="IdEmbalagem" class="text-danger"></span>
             </div>

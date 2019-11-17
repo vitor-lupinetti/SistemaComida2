@@ -12364,11 +12364,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Sistema Comida\\SistemaComida2\\SistemaVenda\\SistemaVenda\\SistemaVenda.csproj",
+      "projectUniqueName": "C:\\Users\\cliente\\Desktop\\SistemaComida2-master\\SistemaComida2-master\\SistemaVenda\\SistemaVenda\\SistemaVenda.csproj",
       "projectName": "SistemaVenda",
-      "projectPath": "C:\\Sistema Comida\\SistemaComida2\\SistemaVenda\\SistemaVenda\\SistemaVenda.csproj",
+      "projectPath": "C:\\Users\\cliente\\Desktop\\SistemaComida2-master\\SistemaComida2-master\\SistemaVenda\\SistemaVenda\\SistemaVenda.csproj",
       "packagesPath": "C:\\Users\\cliente\\.nuget\\packages\\",
-      "outputPath": "C:\\Sistema Comida\\SistemaComida2\\SistemaVenda\\SistemaVenda\\obj\\",
+      "outputPath": "C:\\Users\\cliente\\Desktop\\SistemaComida2-master\\SistemaComida2-master\\SistemaVenda\\SistemaVenda\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -58,7 +58,9 @@ namespace SistemaVenda.Controllers
                 ValidaDados(model, Operacao);
                 if (ModelState.IsValid == false)
                 {
-                    ViewBag.Operacao = Operacao; PreencheDadosParaView(Operacao, model); return View("Form", model);
+                    ViewBag.Operacao = Operacao;
+                    PreencheDadosParaView(Operacao, model);
+                    return View("Form", model);
                 }
                 else
                 {
@@ -116,8 +118,9 @@ namespace SistemaVenda.Controllers
                 DAO.Delete(id);
                 return RedirectToAction("index");
             }
-            catch
+            catch(Exception erro)
             {
+                ViewBag.Erro = erro.Message;
                 return RedirectToAction("index");
             }
         }

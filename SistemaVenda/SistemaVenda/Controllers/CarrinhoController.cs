@@ -42,7 +42,6 @@ namespace SistemaVenda.Controllers
                 carrinhoModel.Preco = model.Preco;
             }
 
-            // preenche a imagem
             ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
             ViewBag.Tipo = HelperController.VerificaTipoUsuario(HttpContext.Session);
             carrinhoModel.ImagemEmBase64 = model.ImageBase64;
@@ -109,7 +108,7 @@ namespace SistemaVenda.Controllers
             return RedirectToAction("index");
         }
 
-        public IActionResult ConcluirCompra(int idcidade)
+        public IActionResult ConcluirCompra(int idcidade, string endereco)
         {
             if(idcidade == 0)
             {
@@ -143,6 +142,7 @@ namespace SistemaVenda.Controllers
                 venda.Id = idPedido;
                 venda.IdEntregador = 1;
                 venda.IdUsuario = u.Id;
+                venda.EnderecoEntrega = endereco;
                 
                 dao.Insert(venda);
                 ItensVendaDAO itemDAO = new ItensVendaDAO();

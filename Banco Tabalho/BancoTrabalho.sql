@@ -230,14 +230,15 @@ create procedure spInsert_Vendas(
 	@DataVenda datetime,
 	@IdUsuario int,
     @IdEntregador int,
-	@IdCidade int 
+	@IdCidade int ,
+	@EnderecoEntrega varchar(max)
 )
 as 
 begin
 insert into Vendas
-(Id, DataVenda, IdUsuario, IdEntregador,IdCidade)
+(Id, DataVenda, IdUsuario, IdEntregador,IdCidade,EnderecoEntrega)
 values
-(@Id, @DataVenda, @IdUsuario, @IdEntregador, @IdCidade)
+(@Id, @DataVenda, @IdUsuario, @IdEntregador, @IdCidade,@EnderecoEntrega)
 end 
 GO
 
@@ -416,15 +417,31 @@ insert into Usuarios
 VALUES
 (2, 'Adm','Vitor','vi.lupinetti@hotmail.com', '123','Rua ingá', 0 )*/
 
-create trigger trg_email on Usuarios for insert as
-begin
+--create trigger trg_email on Usuarios for insert as
+--begin
 
-	declare @email varchar(max) = (select Email from inserted)
+--	declare @email varchar(max) = (select Email from inserted)
 
-	if exists (select Email from Usuarios where Email = @email) begin
-	print 'email já está em uso'
-		rollback tran
-	end
+--	if exists (select Email from Usuarios where Email = @email) begin
+--	print 'email já está em uso'
+--		rollback tran
+--	end
+--end
+
+--select * from Usuarios
+delete from Vendas where Id = 2  
+
+create trigger trg_excVendas on Vendas instead of delete as -- se colocar for/after a trigger não será disparada, por causa das referencias de itensVenda
+begin													  -- a funcão do instead of é disparar qnd houver o evento delete, mas ela não ira deletar as Vendas, apenas vai executar as instruções de dentro 
+	declare @vendaId int = (select id from deleted)
+	delete from ItensVenda where  IdVenda = @vendaId
+	delete from Vendas where id = @vendaId
 end
 
-select * from Usuarios
+
+--select * from Vendas
+--select * from Usuarios
+--select * from Entregador
+--select * from ItensVenda
+
+--delete from Vendas where Id = 4

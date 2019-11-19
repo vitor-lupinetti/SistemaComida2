@@ -131,22 +131,24 @@ namespace SistemaVenda.Controllers
             string usuarioJson = HttpContext.Session.GetString("usuario");
             if (usuarioJson != null)
                 u = JsonConvert.DeserializeObject<UsuarioViewModel>(usuarioJson);
-    
+            VendaViewModel venda = new VendaViewModel();
+            var entregador = EscolherEntregador(idcidade);
+            var carrinho = ObtemCarrinhoNaSession();
             using (var transacao = new System.Transactions.TransactionScope())
             {
-                VendaViewModel venda = new VendaViewModel();
+               
                 double preco = 0;
-
+                
                 venda.IdCidade = idcidade;
                 venda.DataVenda = DateTime.Now;
                 venda.Id = idPedido;
-                venda.IdEntregador = 1;
+                venda.IdEntregador = entregador.Id;
                 venda.IdUsuario = u.Id;
                 venda.EnderecoEntrega = endereco;
                 
                 dao.Insert(venda);
                 ItensVendaDAO itemDAO = new ItensVendaDAO();
-                var carrinho = ObtemCarrinhoNaSession();
+                
                 foreach (var elemento in carrinho)
                 {
                     ItensVendaViewModel item = new ItensVendaViewModel();
@@ -164,8 +166,9 @@ namespace SistemaVenda.Controllers
                 HttpContext.Session.SetString("usuario", usuarioJson2);
                 transacao.Complete();
             }
+            string carrinhoJson = HttpContext.Session.GetString("carrinho");
             RemoverTodos();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("VendaConcluida", "Venda", new {idPed = venda.Id, nomeEntregador = entregador.Nome, carrinhoJ = carrinhoJson});
         }
         private void PreparaListaCidadesParaCombo()
         {
@@ -190,6 +193,30 @@ namespace SistemaVenda.Controllers
             carrinho.Clear();
             string carrinhoJson = JsonConvert.SerializeObject(carrinho);
             HttpContext.Session.SetString("carrinho", carrinhoJson);
+        }
+
+        private EntregadorViewModel EscolherEntregador(int idcidade)
+        {
+            EntregadorDAO dao = new EntregadorDAO();
+            var entregadores = dao.Listagem();
+            List<EntregadorViewModel> listaentregadores = new List<EntregadorViewModel>();
+
+            foreach(var entregador in entregadores)
+            {
+                if (entregador.IdCidadeEntrega == idcidade)
+                    listaentregadores.Add(entregador);
+            }
+
+            if (listaentregadores.Count > 1)
+            {
+                int tamanho = listaentregadores.Count();
+
+                Random r = new Random();
+                int n = r.Next(0, tamanho - 1);
+                return listaentregadores[n];
+            }
+            else
+                return listaentregadores[0];
         }
     }
 }

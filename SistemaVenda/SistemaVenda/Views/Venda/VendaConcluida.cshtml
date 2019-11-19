@@ -1,0 +1,32 @@
+﻿@model VendaViewModel
+
+
+<div>
+    <h2>Venda Concluída</h2>
+    <h2>Pedido número: @Model.Id </h2>
+
+    <p>Seu pedido saiu para entrega e logo chegará até você.</br> 99Eats agradece sua preferência.</p>
+    <p>Nome entregador(a): @ViewBag.Entregador</p>
+
+    <p>Detalhes da compra:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+
+        @foreach(var item in ViewBag.itens)
+        {
+            <tr>
+                <td>@item.Nome   </td>
+                <td>@item.Quantidade</td>
+            </tr>
+        }
+    </table>
+    </br>
+    <p>@Model.DataVenda</p>
+
+</div>

@@ -402,34 +402,16 @@ insert into Usuarios
 VALUES
 (2, 'Adm','Vitor','vi.lupinetti@hotmail.com', '123','Rua ingá', 0 )
 
+insert into Entregador (Id, Nome,IdCidadeEntrega)
+VALUES
+(1,'José',1),(2,'Flavio', 2), (3,'Eduardo',3)
+
 go
 ------------------------------------------------------------------------------------------------------------------
-/*SELECT * from Cidades
 
-SELECT * from Usuarios
-SELECT * from Vendas
-select * from ItensVenda
-
-delete  from Usuarios
-where id = 2
-
-insert into Usuarios
-VALUES
-(2, 'Adm','Vitor','vi.lupinetti@hotmail.com', '123','Rua ingá', 0 )*/
-
---create trigger trg_email on Usuarios for insert as
---begin
-
---	declare @email varchar(max) = (select Email from inserted)
-
---	if exists (select Email from Usuarios where Email = @email) begin
---	print 'email já está em uso'
---		rollback tran
---	end
---end
 
 --select * from Usuarios
-delete from Vendas where Id = 2  
+--delete from Vendas where Id = 2  
 
 create trigger trg_excVendas on Vendas instead of delete as -- se colocar for/after a trigger não será disparada, por causa das referencias de itensVenda
 begin													  -- a funcão do instead of é disparar qnd houver o evento delete, mas ela não ira deletar as Vendas, apenas vai executar as instruções de dentro 
@@ -439,9 +421,9 @@ begin													  -- a funcão do instead of é disparar qnd houver o evento d
 end
 
 
---select * from Vendas
---select * from Usuarios
---select * from Entregador
---select * from ItensVenda
-
---delete from Vendas where Id = 4
+/*select * from Vendas
+select * from Usuarios
+select * from Entregador
+select * from ItensVenda
+SELECT * from Cidades
+delete from Vendas where Id = 3*/

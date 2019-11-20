@@ -421,9 +421,95 @@ begin													  -- a funcão do instead of é disparar qnd houver o evento d
 end
 
 
+------------------------------------------------------------------------------------------------------------------------
+create PROCEDURE spConsulta1
+(
+	@Filtro1 VARCHAR(10),
+	@Filtro2 VARCHAR(10),
+	@Filtro3 VARCHAR(10)
+)
+as
+begin
+
+
+	declare @sql1 VARCHAR(max)
+	declare @sql2 VARCHAR(max)
+	DECLARE @sql3 VARCHAR(max)
+
+	if @Filtro1 = 'mv' BEGIN
+		set @sql1 = 'select co.Descricao,ci.Descricao as Cidade, co.Preco, v.DataVenda, count(i.Qtd) as qtd'
+		set @sql3 = ' group by co.Descricao,ci.Descricao, co.Preco,v.DataVenda
+					order by qtd desc'
+	end
+	else if @Filtro1 = 'p' begin
+		set @sql1 = 'select co.Descricao,ci.Descricao as Cidade, co.Preco, v.DataVenda'
+		set @sql3 = ' order by co.preco'
+	end
+	else if @Filtro1 = 'dv' BEGIN
+		set @sql1 = 'select co.Descricao,ci.Descricao as cidade, v.DataVenda, co.Preco'
+		set @sql3 = ' order by v.datavenda'
+	end
+
+		set @sql2 = ' from Vendas v inner join ItensVenda i ON
+	v.Id = i.IdVenda inner join Cidades ci ON
+	v.IdCidade = ci.Id inner join Comidas co ON
+	i.IdComida = co.Id inner join Categorias ca on 
+	co.IdCategoria = ca.Id'
+
+		set @sql1 += @sql2
+
+	if @Filtro2 = 'entrada' BEGIN
+		set @sql1 += ' where ca.Descricao = ''Entrada'' ' 
+	end
+	else if @Filtro2 = 'pratoprincipal' begin
+		set @sql1 += ' where ca.Descricao = ''Prato Principal''' 
+	end
+	else if @Filtro2 = 'sobremesa' BEGIN
+		set @sql1 += ' where ca.Descricao = ''Sobremesa''' 
+	end
+	else if @Filtro2 = 'bebida' BEGIN
+		set @sql1 += ' where ca.Descricao = ''Bebidas''' 
+	end
+	else if @Filtro2 = 'todos' BEGIN
+		set @sql2 = 'todos'
+	end
+
+	if @Filtro3 = 'SA' BEGIN
+		if @sql2 = 'todos' BEGIN
+			set @sql1 += ' where ci.Descricao = ''Santo André'' ' 
+		END
+		set @sql1 += 'and ci.Descricao = ''Santo André'' '
+	end
+	else if @Filtro3 = 'SB' BEGIN
+		if @sql2 = 'todos' BEGIN
+			set @sql1 += ' where ci.Descricao = ''São Bernardo do Campo''' 
+		END
+		set @sql1 += 'and ci.Descricao = ''São Bernardo do Campo'''
+	end
+
+	else if @Filtro3 = 'SP' BEGIN
+		if @sql2 = 'todos' BEGIN
+			set @sql1 += ' where ci.Descricao = ''São Paulo''' 
+		END
+		set @sql1 += 'and ci.Descricao = ''São Paulo'''
+	end
+	
+
+
+	set @sql1 += @sql3
+
+	exec(@sql1)
+
+end
+go
+-------------------------------------------------------------------------------------------------------------------------
+--exec spConsulta1 'mv', 'pratoprincipal', 'TD'
+
 /*select * from Vendas
 select * from Usuarios
 select * from Entregador
 select * from ItensVenda
 SELECT * from Cidades
-delete from Vendas where Id = 3*/
+select * from Comidas
+select * from Categorias*/
+

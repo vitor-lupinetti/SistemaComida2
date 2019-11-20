@@ -25,7 +25,7 @@ namespace SistemaVenda.Controllers
             var carrinho = JsonConvert.DeserializeObject<List<CarrinhoViewModel>>(carrinhoJ);
             ViewBag.Itens = carrinho;
             ViewBag.Entregador = nomeEntregador;
-
+             
             return View(venda);
         }
 
@@ -54,6 +54,19 @@ namespace SistemaVenda.Controllers
             }
 
             return View(lista);
+        }
+
+        public IActionResult ConsultasProdutos()
+        {
+            return View();
+        }
+
+        public IActionResult RealizaBuscaFiltro(string filtro1, string filtro2, string filtro3)
+        {
+            Consulta1DAO dao = new Consulta1DAO();
+            Consulta1ViewModel c = new Consulta1ViewModel();
+            c = dao.Consulta1(filtro1, filtro2, filtro3);
+            return View();
         }
     }
 }

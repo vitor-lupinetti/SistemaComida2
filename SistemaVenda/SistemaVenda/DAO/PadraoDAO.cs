@@ -55,7 +55,8 @@ namespace SistemaVenda.DAO
             {
                 new SqlParameter("tabela", Tabela)
             };
-            var tabela = HelperDAO.ExecutaProcSelect("spProximoId", p); return Convert.ToInt32(tabela.Rows[0][0]);
+            var tabela = HelperDAO.ExecutaProcSelect("spProximoId", p);
+            return Convert.ToInt32(tabela.Rows[0][0]);
         }
         public virtual List<T> Listagem()
         {
@@ -65,7 +66,8 @@ namespace SistemaVenda.DAO
                 new SqlParameter("Ordem", "1") // 1 é o primeiro campo da tabela,
                                                // ou seja, a chave primária
             };
-            var tabela = HelperDAO.ExecutaProcSelect("spListagem", p); List<T> lista = new List<T>();
+            var tabela = HelperDAO.ExecutaProcSelect("spListagem", p);
+            List<T> lista = new List<T>();
             foreach (DataRow registro in tabela.Rows)
             {
                 lista.Add(MontaModel(registro));

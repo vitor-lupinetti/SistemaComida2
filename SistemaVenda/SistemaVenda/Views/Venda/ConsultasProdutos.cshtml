@@ -1,0 +1,69 @@
+﻿
+
+<div>
+    <h1>Consultas de produtos</h1>
+    <p>Selecione algumas opções abaixo para uma consulta personalizada.</p>
+</div>
+<br>
+
+@using (Html.BeginForm("RealizaBuscaFiltro", "Venda", FormMethod.Get))
+{
+    <p>Selecione um filtro de produto:</p>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active">
+        <input type="radio" name="filtro1" id="rbMaisvendido" value="mv" autocomplete="off" checked> Mais vendidos
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="filtro1" id="rbPrecos" value="p" autocomplete="off"> Preços
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="filtro1" id="rbData" value="dv" autocomplete="off"> Data Venda
+      </label>
+    </div>
+
+    <br>
+    <br>
+
+    <p>Selecione uma categoria para ser filtrada:</p>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active">
+        <input type="radio" name="filtro2" id="rbEntrada" value="entrada" autocomplete="off" checked> Entradas
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="filtro2" id="rbPrinc" value="pratoprincipal" autocomplete="off"> Pratos principais
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="filtro2" id="rbSobre" value="sobremesa" autocomplete="off"> Sobremesas
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="filtro2" id="rbBebi" value="bebida" autocomplete="off"> Bebidas
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="filtro2" id="rbTodos" value="todos" autocomplete="off"> Todos
+      </label>
+    </div>
+
+    <br>
+    <br>
+    <p>Selecione um filtro para cidade:</p>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+  
+
+      <label class="btn btn-secondary active">
+        <input type="radio" name="filtro3" id="rbSA" value="SA" autocomplete="off" checked> Santo André
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="filtro3" id="rbSB" value="SB" autocomplete="off"> São Bernardo
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="filtro3" id="rbSP" value="SP" autocomplete="off"> São Paulo
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="filtro3" id="rbTodas" value="TD" autocomplete="off"> Todas
+      </label>
+    </div>
+
+    <br />
+    <br/>
+    <button class="btn-primary btn" type="submit">Filtrar</button>
+}

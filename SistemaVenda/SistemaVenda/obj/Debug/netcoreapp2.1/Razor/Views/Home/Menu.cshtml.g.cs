@@ -78,7 +78,7 @@ using SistemaVenda.Models;
             WriteLiteral("                     ");
             EndContext();
             BeginContext(854, 116, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6cbae9a42b064f789291f8db2f358912", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2012e65aecab4dacbb9359a87adce41b", async() => {
                 BeginContext(945, 21, true);
                 WriteLiteral("Cadastrar novo prato.");
                 EndContext();

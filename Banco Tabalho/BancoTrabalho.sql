@@ -422,6 +422,7 @@ end
 
 
 ------------------------------------------------------------------------------------------------------------------------
+go
 create PROCEDURE spConsulta1
 (
 	@Filtro1 VARCHAR(10),
@@ -512,4 +513,23 @@ select * from ItensVenda
 SELECT * from Cidades
 select * from Comidas
 select * from Categorias*/
+go
+create trigger trg_estoque on ItensVenda for insert as
+begin
+	
+	declare @ComidaId int = (select IdComida from inserted)
+	declare @qtdV int = (select Qtd from inserted) 
+	declare @EmbalagemId int = (select IdEmbalagem from Comidas where Id = @ComidaId )
+	update Embalagem set
+	QtdEstoque = QtdEstoque -@qtdV
+	where Id = @EmbalagemId
+	declare @qtdE int = (select QtdEstoque from Embalagem where Id = @EmbalagemId)
+	if @qtdE < 0 begin
+		declare @Descricao varchar(max) = (select Descricao from Comidas where Id = @ComidaId)
+		print 'O prato '+ cast(@Descricao as varchar(max)) + ' não pode ser vendido por falta na quantidade de estoque'
+		rollback tran
+    end
+end
 
+--select * from ItensVenda
+--select * from Embalagem

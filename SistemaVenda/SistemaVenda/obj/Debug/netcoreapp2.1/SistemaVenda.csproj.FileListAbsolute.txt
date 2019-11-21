@@ -531,3 +531,4 @@ C:/Users/cliente/Desktop/SistemaComida2-master/SistemaComida2-master/SistemaVend
 C:/Users/cliente/Desktop/SistemaComida2-master/SistemaComida2-master/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/SistemaVenda.csproj.CopyComplete
 /Users/vitorlupinetti/Desktop/SistemaComida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Venda/VendaConcluida.cshtml.g.cs
 /Users/vitorlupinetti/Desktop/SistemaComida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Venda/ConsultasProdutos.cshtml.g.cs
+/Users/vitorlupinetti/Desktop/SistemaComida/SistemaComida2/SistemaVenda/SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Venda/ResultadoFiltro.cshtml.g.cs

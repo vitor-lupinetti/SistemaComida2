@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using SistemaVenda.Models;
@@ -34,32 +35,53 @@ namespace SistemaVenda.DAO
                 consulta.Preco = Convert.ToDouble(registro["Preco"]);
             //consulta.IdCategoria = Convert.ToInt32(registro["IdCategoria"]);
             //consulta.IdEmbalagem = Convert.ToInt32(registro["IdEmbalagem"]);
-            if(registro["DataVenda"] != DBNull.Value)
-                 consulta.DataVenda = Convert.ToDateTime(registro["DataVenda"]);
+            if (registro["DataVenda"] != DBNull.Value)
+                consulta.DataVenda = Convert.ToDateTime(registro["DataVenda"]);
+            else
+                consulta.DataVenda = null;
             consulta.Cidade = registro["Cidade"].ToString();
 
-            
+            consulta.Qtd = Convert.ToInt32(registro["Qtd"]);
 
             return consulta;
         }
-        public Consulta1ViewModel Consulta1(string filtro1, string filtro2, string filtro3)
+       /* public Consulta1ViewModel Consulta1(string filtro1, string filtro2, string filtro3)
         {
             var p = new SqlParameter[]
             {
              new SqlParameter("Filtro1", filtro1),
              new SqlParameter("Filtro2", filtro2),
              new SqlParameter("Filtro3",filtro3)
-        };
+            };
             var tabela = HelperDAO.ExecutaProcSelect("spConsulta1", p);
             if (tabela.Rows.Count == 0)
                 return null;
             else
                 return MontaModel(tabela.Rows[0]);
+        }*/
+
+        public List<Consulta1ViewModel> Consulta1(string filtro1, string filtro2, string filtro3)
+        {
+            var p = new SqlParameter[]
+             {
+             new SqlParameter("Filtro1", filtro1),
+             new SqlParameter("Filtro2", filtro2),
+             new SqlParameter("Filtro3",filtro3)
+             };
+            var tabela = HelperDAO.ExecutaProcSelect("spConsulta1", p);
+            List<Consulta1ViewModel> lista = new List<Consulta1ViewModel>();
+            foreach (DataRow registro in tabela.Rows)
+            {
+                lista.Add(MontaModel(registro));
+            }
+            return lista;
         }
+
 
         protected override void SetTabela()
         {
             Tabela = "Consulta";
         }
     }
+
 }

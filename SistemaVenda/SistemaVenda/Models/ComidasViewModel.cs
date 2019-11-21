@@ -11,7 +11,7 @@ namespace SistemaVenda.Models
     {
        
         public string Descricao { get; set; }
-        public double Preco { get; set; }
+        public double? Preco { get; set; }
         public int IdCategoria { get; set; }
         public int IdEmbalagem { get; set; }
         public IFormFile Imagem { get; set; }

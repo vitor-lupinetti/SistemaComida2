@@ -6,7 +6,8 @@ namespace SistemaVenda.Models
         public string Filtro1 { get; set; }
         public string Filtro2 { get; set; }
         public string Filtro3 { get; set; }
-        public DateTime DataVenda { get; set; }
+        public DateTime? DataVenda { get; set; }
         public string Cidade { get; set;}
+        public int? Qtd { get; set; }
     }
 }

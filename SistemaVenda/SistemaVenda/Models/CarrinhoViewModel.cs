@@ -9,6 +9,6 @@ namespace SistemaVenda.Models
         public string Nome { get; set; }
 
         public string ImagemEmBase64 { get; set; }
-        public double Preco { get; set; }
+        public double? Preco { get; set; }
     }
 }

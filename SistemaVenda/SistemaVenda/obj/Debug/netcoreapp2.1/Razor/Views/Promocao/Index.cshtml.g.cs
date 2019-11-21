@@ -63,7 +63,7 @@ using SistemaVenda.Models;
             WriteLiteral("\n<h2>Cadastro de promoções</h2>\n\n<p>\n    ");
             EndContext();
             BeginContext(138, 50, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "edfcf538a4d143f0894f669f9b6562ad", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "552e2e577b9949fba3fe942167e8f02c", async() => {
                 BeginContext(161, 23, true);
                 WriteLiteral("Cadastrar nova promoção");
                 EndContext();

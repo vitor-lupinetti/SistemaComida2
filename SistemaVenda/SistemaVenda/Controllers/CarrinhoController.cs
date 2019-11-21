@@ -134,37 +134,48 @@ namespace SistemaVenda.Controllers
             VendaViewModel venda = new VendaViewModel();
             var entregador = EscolherEntregador(idcidade);
             var carrinho = ObtemCarrinhoNaSession();
-            using (var transacao = new System.Transactions.TransactionScope())
+            try
             {
-               
-                double preco = 0;
-                
-                venda.IdCidade = idcidade;
-                venda.DataVenda = DateTime.Now;
-                venda.Id = idPedido;
-                venda.IdEntregador = entregador.Id;
-                venda.IdUsuario = u.Id;
-                venda.EnderecoEntrega = endereco;
-                
-                dao.Insert(venda);
-                ItensVendaDAO itemDAO = new ItensVendaDAO();
-                
-                foreach (var elemento in carrinho)
+                using (var transacao = new System.Transactions.TransactionScope())
                 {
-                    ItensVendaViewModel item = new ItensVendaViewModel();
-                    item.Id = idPedido;
-                    item.IdComida = elemento.IdComida;
-                    item.Qtd = elemento.Quantidade;
-                    preco += (elemento.Quantidade * elemento.Preco) + c.ValorEntrega;
 
-                    itemDAO.Insert(item);
+                    double? preco = 0;
+
+                    venda.IdCidade = idcidade;
+                    venda.DataVenda = DateTime.Now;
+                    venda.Id = idPedido;
+                    venda.IdEntregador = entregador.Id;
+                    venda.IdUsuario = u.Id;
+                    venda.EnderecoEntrega = endereco;
+
+                    dao.Insert(venda);
+                    ItensVendaDAO itemDAO = new ItensVendaDAO();
+
+                    foreach (var elemento in carrinho)
+                    {
+                        ItensVendaViewModel item = new ItensVendaViewModel();
+                        item.Id = idPedido;
+                        item.IdComida = elemento.IdComida;
+                        item.Qtd = elemento.Quantidade;
+                        preco += (elemento.Quantidade * elemento.Preco) + c.ValorEntrega;
+
+                       
+                            itemDAO.Insert(item);
+                        
+                      
+                    }
+                    double? valorgasto = u.ValorGasto + preco;
+                    u.ValorGasto = valorgasto;
+                    userDAO.Update(u);
+                    string usuarioJson2 = JsonConvert.SerializeObject(u);
+                    HttpContext.Session.SetString("usuario", usuarioJson2);
+                    transacao.Complete();
                 }
-                double valorgasto = u.ValorGasto + preco;
-                u.ValorGasto = valorgasto;
-                userDAO.Update(u);
-                string usuarioJson2 = JsonConvert.SerializeObject(u);
-                HttpContext.Session.SetString("usuario", usuarioJson2);
-                transacao.Complete();
+            }
+            catch (Exception erro)
+            {
+                TempData["Erro"] = erro.Message;
+                return RedirectToAction("Index");
             }
             string carrinhoJson = HttpContext.Session.GetString("carrinho");
             RemoverTodos();

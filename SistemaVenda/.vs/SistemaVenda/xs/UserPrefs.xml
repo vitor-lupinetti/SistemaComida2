@@ -1,22 +1,18 @@
 ﻿<Properties StartupConfiguration="{7611DA1D-95A8-4157-8241-1DCC62B67159}|Default">
   <MonoDevelop.Ide.ItemProperties.SistemaVenda PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Comida/Index.cshtml.g.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SistemaVenda/DAO/Consulta1DAO.cs">
     <Files>
-      <File FileName="SistemaVenda/Controllers/VendaController.cs" Line="68" Column="58" IsPinned="True" />
-      <File FileName="SistemaVenda/Views/Venda/Consultas.cshtml" Line="9" Column="32" />
-      <File FileName="SistemaVenda/Views/Entregador/Index.cshtml" Line="1" Column="1" />
-      <File FileName="SistemaVenda/Controllers/ComidaController.cs" Line="15" Column="69" />
-      <File FileName="SistemaVenda/DAO/PadraoDAO.cs" Line="51" Column="10" />
-      <File FileName="SistemaVenda/Models/ComidasViewModel.cs" Line="15" Column="45" />
-      <File FileName="SistemaVenda/DAO/HelperDAO.cs" Line="40" Column="58" />
-      <File FileName="SistemaVenda/Models/PadraoViewModel.cs" Line="1" Column="1" />
-      <File FileName="SistemaVenda/DAO/ComidaDAO.cs" Line="34" Column="65" />
-      <File FileName="SistemaVenda/Models/Consulta1ViewModel.cs" Line="6" Column="44" />
-      <File FileName="SistemaVenda/DAO/Consulta1DAO.cs" Line="46" Column="44" />
-      <File FileName="SistemaVenda/DAO/EntregadorDAO.cs" Line="1" Column="1" />
+      <File FileName="SistemaVenda/Controllers/VendaController.cs" Line="73" Column="1" IsPinned="True" />
+      <File FileName="SistemaVenda/Controllers/CarrinhoController.cs" Line="167" Column="28" />
+      <File FileName="SistemaVenda/Views/Venda/ResultadoFiltro.cshtml" Line="8" Column="1" />
       <File FileName="SistemaVenda/Views/Comida/Form.cshtml" Line="1" Column="1" />
-      <File FileName="SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Comida/Form.cshtml.g.cs" Line="14" Column="46" />
-      <File FileName="SistemaVenda/obj/Debug/netcoreapp2.1/Razor/Views/Comida/Index.cshtml.g.cs" Line="28" Column="120" />
+      <File FileName="SistemaVenda/Views/Comida/Index.cshtml" Line="1" Column="1" />
+      <File FileName="SistemaVenda/DAO/Consulta1DAO.cs" Line="41" Column="43" />
+      <File FileName="SistemaVenda/Views/Venda/VendaConcluida.cshtml" Line="1" Column="1" />
+      <File FileName="SistemaVenda/Models/CarrinhoViewModel.cs" Line="12" Column="23" />
+      <File FileName="SistemaVenda/Models/UsuarioViewModel.cs" Line="18" Column="23" />
+      <File FileName="SistemaVenda/Views/Carrinho/Index.cshtml" Line="15" Column="28" />
+      <File FileName="SistemaVenda/Models/Consulta1ViewModel.cs" Line="9" Column="25" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,13 +20,13 @@
           <Node name="SistemaVenda" expanded="True">
             <Node name="SistemaVenda" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="DAO" expanded="True" />
+              <Node name="DAO" expanded="True">
+                <Node name="Consulta1DAO.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Carrinho" expanded="True" />
-                <Node name="Comida" expanded="True">
-                  <Node name="Form.cshtml" selected="True" />
-                </Node>
+                <Node name="Comida" expanded="True" />
                 <Node name="Entregador" expanded="True" />
                 <Node name="Home" expanded="True" />
                 <Node name="Venda" expanded="True" />
@@ -44,9 +40,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/vitorlupinetti/Desktop/SistemaComida/SistemaComida2/SistemaVenda/SistemaVenda/Controllers/VendaController.cs" relfile="SistemaVenda/Controllers/VendaController.cs" line="65" column="29" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

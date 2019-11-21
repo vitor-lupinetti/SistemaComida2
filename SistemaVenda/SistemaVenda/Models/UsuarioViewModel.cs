@@ -15,7 +15,7 @@ namespace SistemaVenda.Models
         public string Email { get; set; }
         public string Senha { get; set; }
         public string Endereco { get; set; }
-        public double ValorGasto { get; set; }
+        public double? ValorGasto { get; set; }
         /*public IFormFile Imagem { get; set; }
         public string ImageBase64 { get; set; }
 

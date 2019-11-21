@@ -1,0 +1,30 @@
+﻿@model List<Consulta1ViewModel>
+
+<div>
+    <h1>Resultado obtido: </h1>
+</div>
+
+<table>
+@foreach(var item in Model)
+{
+    <tr>
+        <td>@item.Descricao</td>
+        <td>@item.Cidade</td>
+        @if (item.DataVenda != null)
+        {
+            <td>@item.DataVenda</td>
+        }
+
+        @if(item.Qtd != null)
+        {
+             <td>@item.Qtd</td>
+        }
+
+        @if (@item.Preco != null)
+        {
+            <td>@item.Preco</td>
+        }
+        
+    </tr>
+}
+</table>

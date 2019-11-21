@@ -423,7 +423,7 @@ end
 
 ------------------------------------------------------------------------------------------------------------------------
 go
-create PROCEDURE spConsulta1
+alter PROCEDURE spConsulta1
 (
 	@Filtro1 VARCHAR(10),
 	@Filtro2 VARCHAR(10),
@@ -438,8 +438,8 @@ begin
 	DECLARE @sql3 VARCHAR(max)
 
 	if @Filtro1 = 'mv' BEGIN
-		set @sql1 = 'select co.Descricao,ci.Descricao as Cidade, co.Preco, v.DataVenda, count(i.Qtd) as qtd'
-		set @sql3 = ' group by co.Descricao,ci.Descricao, co.Preco,v.DataVenda
+		set @sql1 = 'select co.Descricao,ci.Descricao as Cidade, co.Preco, null as DataVenda, count(i.Qtd) as qtd'
+		set @sql3 = ' group by co.Descricao,ci.Descricao, co.Preco
 					order by qtd desc'
 	end
 	else if @Filtro1 = 'p' begin
@@ -447,7 +447,7 @@ begin
 		set @sql3 = ' order by co.preco'
 	end
 	else if @Filtro1 = 'dv' BEGIN
-		set @sql1 = 'select co.Descricao,ci.Descricao as cidade, v.DataVenda, co.Preco'
+		set @sql1 = 'select co.Descricao,ci.Descricao as cidade, co.Preco, v.DataVenda'
 		set @sql3 = ' order by v.datavenda'
 	end
 
@@ -479,20 +479,20 @@ begin
 		if @sql2 = 'todos' BEGIN
 			set @sql1 += ' where ci.Descricao = ''Santo André'' ' 
 		END
-		set @sql1 += 'and ci.Descricao = ''Santo André'' '
+		set @sql1 += ' and ci.Descricao = ''Santo André'' '
 	end
 	else if @Filtro3 = 'SB' BEGIN
 		if @sql2 = 'todos' BEGIN
 			set @sql1 += ' where ci.Descricao = ''São Bernardo do Campo''' 
 		END
-		set @sql1 += 'and ci.Descricao = ''São Bernardo do Campo'''
+		set @sql1 += ' and ci.Descricao = ''São Bernardo do Campo'''
 	end
 
 	else if @Filtro3 = 'SP' BEGIN
 		if @sql2 = 'todos' BEGIN
 			set @sql1 += ' where ci.Descricao = ''São Paulo''' 
 		END
-		set @sql1 += 'and ci.Descricao = ''São Paulo'''
+		set @sql1 += ' and ci.Descricao = ''São Paulo'''
 	end
 	
 
@@ -504,15 +504,15 @@ begin
 end
 go
 -------------------------------------------------------------------------------------------------------------------------
---exec spConsulta1 'mv', 'pratoprincipal', 'TD'
+exec spConsulta1 'mv', 'todos', 'TD'
 
-/*select * from Vendas
+select * from Vendas
 select * from Usuarios
 select * from Entregador
 select * from ItensVenda
 SELECT * from Cidades
 select * from Comidas
-select * from Categorias*/
+select * from Categorias
 go
 create trigger trg_estoque on ItensVenda for insert as
 begin
@@ -533,3 +533,10 @@ end
 
 --select * from ItensVenda
 --select * from Embalagem
+
+select co.Descricao,ci.Descricao as Cidade, co.Preco, count(i.Qtd) as qtd, null as DataVenda from Vendas v inner join ItensVenda i ON
+	v.Id = i.IdVenda inner join Cidades ci ON
+	v.IdCidade = ci.Id inner join Comidas co ON
+	i.IdComida = co.Id inner join Categorias ca on 
+	co.IdCategoria = ca.Id where ci.Descricao = 'Santo André'  and ci.Descricao = 'Santo André'  group by co.Descricao,ci.Descricao, co.Preco
+					order by qtd desc

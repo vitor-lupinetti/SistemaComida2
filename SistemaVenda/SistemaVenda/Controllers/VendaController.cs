@@ -64,9 +64,9 @@ namespace SistemaVenda.Controllers
         public IActionResult RealizaBuscaFiltro(string filtro1, string filtro2, string filtro3)
         {
             Consulta1DAO dao = new Consulta1DAO();
-            Consulta1ViewModel c = new Consulta1ViewModel();
+            List<Consulta1ViewModel> c = new List<Consulta1ViewModel>();
             c = dao.Consulta1(filtro1, filtro2, filtro3);
-            return View();
+            return View("ResultadoFiltro", c);
         }
     }
 }

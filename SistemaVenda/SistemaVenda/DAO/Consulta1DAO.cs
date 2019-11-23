@@ -40,8 +40,8 @@ namespace SistemaVenda.DAO
             else
                 consulta.DataVenda = null;
             consulta.Cidade = registro["Cidade"].ToString();
-
-            consulta.Qtd = Convert.ToInt32(registro["Qtd"]);
+            if (registro["qtd"] != DBNull.Value)
+                consulta.Qtd = Convert.ToInt32(registro["qtd"]);
 
             return consulta;
         }

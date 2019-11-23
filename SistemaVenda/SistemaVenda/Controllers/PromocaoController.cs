@@ -93,6 +93,9 @@ namespace SistemaVenda.Controllers
             string usuarioJson = HttpContext.Session.GetString("usuario");
             if (usuarioJson != null)
                 u = JsonConvert.DeserializeObject<UsuarioViewModel>(usuarioJson);
+            ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
+            ViewBag.Nome = u.Nome;
+            ViewBag.Tipo = u.TipoUsuario;
 
             if (!HelperController.VerificaUserLogado(HttpContext.Session))
                 context.Result = RedirectToAction("Index", "Login");

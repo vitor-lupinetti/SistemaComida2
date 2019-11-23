@@ -154,7 +154,7 @@ WriteAttributeValue("", 732, item.IdComida, 732, 14, false);
             WriteLiteral("        <p>Escolha a cidade para entrega:</p>\r\n        ");
             EndContext();
             BeginContext(1030, 85, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4fc0c1b97c0645b18a906bb5716f137a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df2cb6facc364210950d678a7101ce71", async() => {
                 BeginContext(1105, 1, true);
                 WriteLiteral(" ");
                 EndContext();
@@ -210,7 +210,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.Cidades;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1355, 122, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b73ad99b0d041168802aa6ac05a04ad", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9a1aadaf3a9440e0b9f3202649c42226", async() => {
                 BeginContext(1451, 22, true);
                 WriteLiteral("Voltar para o cardápio");
                 EndContext();

@@ -1,12 +1,35 @@
 ﻿@model List<Consulta1ViewModel>
 
+@{
+    var item2 = Model[0];
+}
+
 <div>
     <h1>Resultado obtido: </h1>
 </div>
 
-<table>
+<table class="table table-bordered">
+     <tr>
+        <th>Descrição</th>
+        <th>Cidade da venda</th>
+        @if (item2.DataVenda != null)
+        {
+            <th>Data da Venda</th>
+        }
+
+        @if(item2.Qtd != null)
+        {
+             <th>Quantidade vendida</th>
+        }
+
+        @if (@item2.Preco != null)
+        {
+            <th>Preço</th>
+        }
+    </tr>
 @foreach(var item in Model)
 {
+   
     <tr>
         <td>@item.Descricao</td>
         <td>@item.Cidade</td>

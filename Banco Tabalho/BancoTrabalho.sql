@@ -423,7 +423,7 @@ end
 
 ------------------------------------------------------------------------------------------------------------------------
 go
-alter PROCEDURE spConsulta1
+create PROCEDURE spConsulta1
 (
 	@Filtro1 VARCHAR(10),
 	@Filtro2 VARCHAR(10),
@@ -443,12 +443,12 @@ begin
 					order by qtd desc'
 	end
 	else if @Filtro1 = 'p' begin
-		set @sql1 = 'select co.Descricao,ci.Descricao as Cidade, co.Preco, v.DataVenda'
-		set @sql3 = ' order by co.preco'
+		set @sql1 = 'select co.Descricao,ci.Descricao as Cidade, co.Preco, null as DataVenda, null as qtd'
+		set @sql3 = ' order by co.preco desc'
 	end
 	else if @Filtro1 = 'dv' BEGIN
-		set @sql1 = 'select co.Descricao,ci.Descricao as cidade, co.Preco, v.DataVenda'
-		set @sql3 = ' order by v.datavenda'
+		set @sql1 = 'select co.Descricao,ci.Descricao as cidade, co.Preco, v.DataVenda, null as qtd'
+		set @sql3 = ' order by v.datavenda desc'
 	end
 
 		set @sql2 = ' from Vendas v inner join ItensVenda i ON
@@ -504,7 +504,7 @@ begin
 end
 go
 -------------------------------------------------------------------------------------------------------------------------
-exec spConsulta1 'mv', 'todos', 'TD'
+exec spConsulta1 'p', 'todos', 'TD'
 
 select * from Vendas
 select * from Usuarios

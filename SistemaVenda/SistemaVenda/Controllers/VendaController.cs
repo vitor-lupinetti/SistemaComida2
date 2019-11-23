@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json;
 using SistemaVenda.DAO;
 using SistemaVenda.Models;
@@ -67,6 +68,28 @@ namespace SistemaVenda.Controllers
             List<Consulta1ViewModel> c = new List<Consulta1ViewModel>();
             c = dao.Consulta1(filtro1, filtro2, filtro3);
             return View("ResultadoFiltro", c);
+        }
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            UsuarioViewModel u = new UsuarioViewModel();
+            string usuarioJson = HttpContext.Session.GetString("usuario");
+            if (usuarioJson != null)
+                u = JsonConvert.DeserializeObject<UsuarioViewModel>(usuarioJson);
+            ViewBag.Logado = HelperController.VerificaUserLogado(HttpContext.Session);
+            ViewBag.Nome = u.Nome;
+            ViewBag.Tipo = u.TipoUsuario;
+
+            if (!HelperController.VerificaUserLogado(HttpContext.Session))
+                context.Result = RedirectToAction("Index", "Login");
+            else if (u.TipoUsuario != "Adm")
+            {
+                context.Result = RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.Logado = true;
+                base.OnActionExecuting(context);
+            }
         }
     }
 }

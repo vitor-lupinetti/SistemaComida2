@@ -49,9 +49,16 @@
                             <a class="dropdown-item" asp-area="" asp-controller="Comida" asp-action="Create">Prato</a>
                             <a class="dropdown-item" asp-area="" asp-controller="Entregador" asp-action="Create">Entregador</a>
                             <a class="dropdown-item" asp-area="" asp-controller="Promocao" asp-action="Create">Promoção</a>
+                            
                         }
                     </div>
                 </li>
+                 @if (ViewBag.Logado == true && ViewBag.Tipo == "Adm")
+                 {
+                     <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Venda" asp-action="ConsultasProdutos">Filtros</a>
+                     </li>
+                 }
             </ul>
         </div>
     </nav>

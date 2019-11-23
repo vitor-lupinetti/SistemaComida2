@@ -63,7 +63,7 @@ using SistemaVenda.Models;
             WriteLiteral("\n<h2>Pratos cadastrados</h2>\n\n<p>\n    ");
             EndContext();
             BeginContext(134, 36, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "13fcfffc7f4a40969c344f4c2a81f8b4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "931cd702b9c3403b81ef9e85c76dffeb", async() => {
                 BeginContext(157, 9, true);
                 WriteLiteral("Cadastrar");
                 EndContext();

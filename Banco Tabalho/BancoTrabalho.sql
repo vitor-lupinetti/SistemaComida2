@@ -53,13 +53,13 @@ Create table Categorias
 )
 
 
-Create table Promocao
+ create table AjustePreco
 (
 	Id int not null primary key,
 	IdCategoria int not null foreign key references Categorias (Id),
 	Porcentagem int not null,
-	DataInicio DATETIME not null,
-	DataFim DATETIME not null
+	Opcao varchar(max) not null
+	
 )
 
 Create table Embalagem
@@ -263,19 +263,19 @@ GO
 
 
 
-create procedure spInsert_Promocao(
+create procedure spInsert_AjustePreco(
 	@Id int,
 	@IdCategoria int,
-	@Porcentagem int ,
-	@DataInicio DATETIME,
-	@DataFim DATETIME
+	@Porcentagem int,
+	@Opcao varchar(max)
+	
 )
 as
 begin
-insert into Promocao
-(Id, IdCategoria, Porcentagem, DataInicio, DataFim)
+insert into AjustePreco
+(Id, IdCategoria, Porcentagem,Opcao)
 values 
-(@Id, @IdCategoria, @Porcentagem, @DataInicio, @DataFim)
+(@Id, @IdCategoria, @Porcentagem,@Opcao)
 end
 GO
 ------------------------------------------------------------------------------------------------------------------
@@ -357,21 +357,21 @@ end
 GO
 ------------------------------------------------------------------------------------------------------------------
 
-create procedure spUpdate_Promocao
+create procedure spUpdate_AjustePreco
 (
 	@Id int,
 	@IdCategoria int,
-	@Porcentagem int ,
-	@DataInicio DATETIME,
-	@DataFim DATETIME
+	@Porcentagem int,
+	@Opcao varchar(7)
+
 )
 as
 begin
-update Promocao set
+update AjustePreco set
 IdCategoria = @IdCategoria,
 Porcentagem = @Porcentagem,
-datainicio = @DataInicio,
-datafim = @DataFim
+Opcao = @Opcao
+
 where Id = @Id
 end
 GO
@@ -540,3 +540,45 @@ select co.Descricao,ci.Descricao as Cidade, co.Preco, count(i.Qtd) as qtd, null 
 	i.IdComida = co.Id inner join Categorias ca on 
 	co.IdCategoria = ca.Id where ci.Descricao = 'Santo André'  and ci.Descricao = 'Santo André'  group by co.Descricao,ci.Descricao, co.Preco
 					order by qtd desc
+
+
+
+go
+create trigger trg_AjustePreco on AjustePreco for insert as
+begin
+	declare 
+	 @Categoria_cursor varchar(max),
+	 @Id_comida int,
+	 @Categoria varchar(max),
+	 @Porcentagem decimal(10,2),
+	 @Opcao varchar(7)
+	  
+	  select  @Categoria = IdCategoria, @Porcentagem = Porcentagem, @Opcao = Opcao from inserted
+
+	 declare cursorCategoriaComida cursor for
+     select Id,IdCategoria from Comidas
+
+	open cursorCategoriaComida
+
+	fetch next from cursorCategoriaComida into @Id_comida,@Categoria_cursor
+	while @@fetch_status = 0
+	begin
+	if @Opcao = 'aumenta'
+	begin
+		set @Porcentagem = @Porcentagem *-1
+	end
+
+		if @Categoria = @Categoria_cursor
+		begin
+		
+			update Comidas 
+			set preco = preco - (preco *(@Porcentagem/100)) 
+			where
+			IdCategoria = @Categoria_cursor and Id = @Id_comida
+		end
+		fetch next from cursorCategoriaComida into @Id_comida,@Categoria_cursor
+	end
+end
+
+select Opcao from AjustePreco
+select * from Comidas

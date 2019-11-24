@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SistemaVenda.Models.AjustePrecoViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Ajuste de preços</h2>
+
+<p>
+    <a asp-action="Create">Ajustar Preço</a>
+</p>
+
+
+<table class="table table-bordered">
+    <thead>
+		<tr>
+			<th>Ações</th>
+			<th scope="col">Categoria</th>
+			<th scope="col">Porcentagem</th>
+			<th scope="col">Id</th>
+			
+		</tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                <a href="AjustePreco/Edit?id=@item.Id">Editar</a>
+                <a href="javascript:apagar(@item.Id,'AjustePreco')">Apagar</a>
+            </td>
+            <td>@item.IdCategoria</td>
+            <td>@item.Porcentagem</td>
+            <td>@item.Id</td>
+			
+        </tr>
+                 
+        }
+       
+    </tbody>
+</table>
+

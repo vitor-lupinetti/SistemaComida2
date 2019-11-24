@@ -139,7 +139,7 @@ namespace SistemaVenda.Controllers
                 using (var transacao = new System.Transactions.TransactionScope())
                 {
 
-                    double? preco = 0;
+                    double preco = 0;
 
                     venda.IdCidade = idcidade;
                     venda.DataVenda = DateTime.Now;
@@ -164,7 +164,7 @@ namespace SistemaVenda.Controllers
                         
                       
                     }
-                    double? valorgasto = u.ValorGasto + preco;
+                    double valorgasto = u.ValorGasto + preco;
                     u.ValorGasto = valorgasto;
                     userDAO.Update(u);
                     string usuarioJson2 = JsonConvert.SerializeObject(u);

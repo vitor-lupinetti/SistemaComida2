@@ -98,7 +98,7 @@ values
 
 insert into Embalagem(Id,Descricao,QtdEstoque)
 values
-(1, 'Copo de plastico', 10),(2, 'Enrolado no papel', 10),(3, 'Pote térmico de isopor', 10),(4, 'Embalagem para lanches', 10),(5,'Embalagem de plástico', 10)
+(1, 'Copo de plastico', 1000),(2, 'Enrolado no papel', 1000),(3, 'Pote térmico de isopor', 1000),(4, 'Embalagem para lanches', 1000),(5,'Embalagem de plástico', 1000)
 
 insert into Cidades(Id, Descricao,ValorEntrega)
 values

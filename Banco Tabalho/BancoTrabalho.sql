@@ -506,11 +506,16 @@ go
 -------------------------------------------------------------------------------------------------------------------------
 --exec spConsulta1 'p', 'todos', 'TD'
 
+
+
+
+
+select * from Embalagem
 select * from Vendas
 select * from Usuarios
-select * from Entregador
+--select * from Entregador
 select * from ItensVenda
-SELECT * from Cidades
+--SELECT * from Cidades
 select * from Comidas
 select * from Categorias
 go
@@ -583,3 +588,92 @@ end
 
 select Opcao from AjustePreco
 select * from Comidas where IdCategoria = 1
+go
+
+create function consulta2
+(
+	@filtro1 varchar(max),
+	@filtro2 varchar(max),
+	@filtro3 varchar(max)
+)
+returns varchar(max)
+as
+begin
+	declare @sql1 varchar(max),
+			@sql2 varchar(max)
+	      
+
+			set @sql1 = 'select u.Nome, u.ValorGasto, ci.descricao, ca.Descricao, sum(e.id) qtd 
+					from Usuarios u inner join Vendas v on
+					u.Id = v.IdUsuario inner join Cidades ci on
+					v.IdCidade = ci.Id inner join ItensVenda i on
+					v.Id = i.IdVenda inner join Comidas co on
+					i.IdComida = co.Id inner join Categorias ca on
+					co.IdCategoria = ca.Id'
+		
+	
+	 if @filtro1 ='SP'begin
+		
+		set @sql1 = 'where ci.Descricao = ''São Paulo'' '
+	end
+	 else if @filtro1 = 'SA' begin
+		set @sql1 += 'where ci.Descricao = ''Santo André'' '
+	end
+	else if @filtro1 = 'SB' begin
+		set @sql1 += 'where ci.Descricao = ''Santo André'' '
+	end
+
+	if @filtro2 = 'sobremesa' begin
+		set @sql1 += 'and ca.Descricao = ''Sobremesa'' '
+	end
+	else if @filtro2 = 'pratoprinc' begin
+		set @sql1 += 'and ca.Descricao = ''Prato Principal'' '
+	end
+	else if @filtro2 = 'entrada' begin
+		set @sql1 += 'and ca.Descricao = ''Entrada'' '
+	end
+	else if @filtro2 = 'bebida' begin
+		set @sql1 += 'and ca.Descricao = ''Bebidas'' '
+	end
+	
+	if @filtro3 = 'copo' begin
+		set @sql1 += 'and e.Descricao = ''Copo de plastico' 
+	end
+	if @filtro3 = 'enrolado no papel' begin
+		set @sql1 += 'and e.Descricao = ''Enrolado no papel'' '
+	end
+	if @filtro3 = 'Pote térmico de isopor' begin
+		set @sql1 += 'and e.Descricao = ''Pote térmico de isopor'' '
+	end
+	if @filtro3 = 'Embalagem para lanches' begin
+		set @sql1 += 'and e.Descricao = ''Embalagem para lanches'''
+	end
+	if @filtro3 = 'Embalagem de plástico' begin
+		set @sql1 += 'and e.Descricao = ''Embalagem de plástico'''
+	end
+	set @sql2 += ' group by u.Nome, u.ValorGasto, ci.descricao, ca.Descricao 
+					order by u.ValorGasto'
+	return @sql1
+end
+
+select u.Nome, u.ValorGasto, ci.descricao, ca.Descricao, sum(e.id) qtd 
+from Usuarios u inner join Vendas v on
+					u.Id = v.IdUsuario inner join Cidades ci on
+					v.IdCidade = ci.Id inner join ItensVenda i on
+					v.Id = i.IdVenda inner join Comidas co on
+					i.IdComida = co.Id inner join Categorias ca on
+					co.IdCategoria = ca.Id inner join Embalagem e on
+					co.IdEmbalagem = e.Id
+					where ci.Descricao = 'São Paulo' and ca.Descricao = 'Prato Principal'
+					 group by u.Nome, u.ValorGasto, ci.descricao, ca.Descricao 
+					order by u.ValorGasto
+
+select * from Embalagem
+select * from Vendas
+select * from Usuarios
+--select * from Entregador
+select * from ItensVenda
+SELECT * from Cidades
+select * from Comidas
+select * from Categorias
+select * from ItensVenda

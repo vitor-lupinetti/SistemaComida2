@@ -438,7 +438,7 @@ begin
 	DECLARE @sql3 VARCHAR(max)
 
 	if @Filtro1 = 'mv' BEGIN
-		set @sql1 = 'select co.Descricao,ci.Descricao as Cidade, co.Preco, null as DataVenda, count(i.Qtd) as qtd'
+		set @sql1 = 'select co.Descricao,ci.Descricao as Cidade, co.Preco, null as DataVenda, sum(i.Qtd) as qtd'
 		set @sql3 = ' group by co.Descricao,ci.Descricao, co.Preco
 					order by qtd desc'
 	end
@@ -462,7 +462,7 @@ begin
 	if @Filtro2 = 'entrada' BEGIN
 		set @sql1 += ' where ca.Descricao = ''Entrada'' ' 
 	end
-	else if @Filtro2 = 'pratoprincipal' begin
+	else if @Filtro2 = 'pratoprinc' begin
 		set @sql1 += ' where ca.Descricao = ''Prato Principal''' 
 	end
 	else if @Filtro2 = 'sobremesa' BEGIN
@@ -504,7 +504,7 @@ begin
 end
 go
 -------------------------------------------------------------------------------------------------------------------------
-exec spConsulta1 'p', 'todos', 'TD'
+--exec spConsulta1 'p', 'todos', 'TD'
 
 select * from Vendas
 select * from Usuarios
@@ -534,12 +534,12 @@ end
 --select * from ItensVenda
 --select * from Embalagem
 
-select co.Descricao,ci.Descricao as Cidade, co.Preco, count(i.Qtd) as qtd, null as DataVenda from Vendas v inner join ItensVenda i ON
+/*select co.Descricao,ci.Descricao as Cidade, co.Preco, count(i.Qtd) as qtd, null as DataVenda from Vendas v inner join ItensVenda i ON
 	v.Id = i.IdVenda inner join Cidades ci ON
 	v.IdCidade = ci.Id inner join Comidas co ON
 	i.IdComida = co.Id inner join Categorias ca on 
 	co.IdCategoria = ca.Id where ci.Descricao = 'Santo André'  and ci.Descricao = 'Santo André'  group by co.Descricao,ci.Descricao, co.Preco
-					order by qtd desc
+					order by qtd desc*/
 
 
 
@@ -581,4 +581,4 @@ begin
 end
 
 select Opcao from AjustePreco
-select * from Comidas
+select * from Comidas where IdCategoria = 1

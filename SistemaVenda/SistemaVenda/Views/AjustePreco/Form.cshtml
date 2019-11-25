@@ -19,10 +19,10 @@
 				<span asp-validation-for="Id" class="text-danger"></span>
 			</div>
 			<div class="form-group">
-				
-				<select name=" Opcao">
-					<option value=" aumenta"> aumenta</option>
-					<option value="diminui"> diminui</option>
+				<label asp-for="Opcao" class="control-label">Selecione uma opção</label>
+				<select class="form-control" asp-for="Opcao" name="Opcao">
+					<option value="aumenta"> Aumento</option>
+					<option value="diminui"> Desconto</option>
 				</select>
 				<span asp-validation-for="Opcao" class="text-danger"></span>
 			</div>

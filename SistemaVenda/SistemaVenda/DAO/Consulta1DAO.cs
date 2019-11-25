@@ -45,20 +45,7 @@ namespace SistemaVenda.DAO
 
             return consulta;
         }
-       /* public Consulta1ViewModel Consulta1(string filtro1, string filtro2, string filtro3)
-        {
-            var p = new SqlParameter[]
-            {
-             new SqlParameter("Filtro1", filtro1),
-             new SqlParameter("Filtro2", filtro2),
-             new SqlParameter("Filtro3",filtro3)
-            };
-            var tabela = HelperDAO.ExecutaProcSelect("spConsulta1", p);
-            if (tabela.Rows.Count == 0)
-                return null;
-            else
-                return MontaModel(tabela.Rows[0]);
-        }*/
+       
 
         public List<Consulta1ViewModel> Consulta1(string filtro1, string filtro2, string filtro3)
         {

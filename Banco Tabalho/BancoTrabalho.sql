@@ -561,12 +561,13 @@ begin
 	open cursorCategoriaComida
 
 	fetch next from cursorCategoriaComida into @Id_comida,@Categoria_cursor
-	while @@fetch_status = 0
-	begin
 	if @Opcao = 'aumenta'
 	begin
 		set @Porcentagem = @Porcentagem *-1
 	end
+	while @@fetch_status = 0
+	begin
+	
 
 		if @Categoria = @Categoria_cursor
 		begin
